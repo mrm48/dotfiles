@@ -7,8 +7,6 @@ This is the configuration we've been building in the *Emacs From Scratch* series
 
 The following variables are used to tweak some of the configuration pieces for use in the live streams so you might need to adjust them for your local machine if you try to use this configuration directly.
 
-*NOTE:* If you run into any issues while using this configuration, please [[https://github.com/daviwil/emacs-from-scratch/issues/new][file an issue]] or send me an email at =david at systemcrafters.cc=.
-
 #+begin_src emacs-lisp
 
   ;; NOTE: init.el is now generated from Emacs.org.  Please edit that file

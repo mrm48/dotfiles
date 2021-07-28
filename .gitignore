@@ -1,0 +1,6 @@
+.emacs.d/etc/
+.emacs.d/var/
+.emacs.d/elpa/
+.emacs.d/packages/
+.emacs.d/OrgFiles/
+.emacs.d/show-notes/

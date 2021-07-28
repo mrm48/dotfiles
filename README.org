@@ -1,0 +1,6 @@
+
+* Dotfiles
+Dotfiles for syncing between machines. Included configuration:
+
+** Emacs
+This uses [[https://github.com/daviwil/emacs-from-scratch][emacs-from-scratch]] as a starter config and includes some tweaks for using with my personal directory structure.

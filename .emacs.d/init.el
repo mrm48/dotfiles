@@ -545,6 +545,7 @@
 
 (use-package vterm
   :commands vterm
+  :bind (("C-c e n" . vterm))
   :config
   (setq term-prompt-regexp "^[^#$%>\n]*[#$%>] *")  ;; Set this to match your custom shell prompt
   ;;(setq vterm-shell "zsh")                       ;; Set this to customize the shell to launch
@@ -576,7 +577,7 @@
 
 (use-package eshell
   :hook (eshell-first-time-mode . efs/configure-eshell)
-  :bind (("C-c e n" . eshell))
+  ;; old binding when using eshell :bind (("C-c e n" . eshell))
   :config
 
   (with-eval-after-load 'esh-opt

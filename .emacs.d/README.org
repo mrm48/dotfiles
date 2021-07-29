@@ -1,4 +1,22 @@
-#+title: Emacs From Scratch
+#+title: Emacs Configuration
+
+* Emacs from Scratch
+
+This configuration is modified from the Emacs from Scratch YouTube series from [[https://www.youtube.com/watch?v=74zOY-vgkyw&list=PLEoMzSkcN8oPH1au7H6B7bBJ4ZO7BXjSZ][System Crafters]]. While the [[https://github.com/daviwil/emacs-from-scratch][original]] could potentially run without much set up, neither it or the configuration in Emacs.org included in this repository should be used without modification. I've listed my changes on top of the Emacs from Scratch base below in case anyone wants to use mine as a starting point. 
+
+** Fonts
+
+It is very likely that the fonts I am using are not installed by default. I use [[https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/UbuntuMono/Regular/complete/Ubuntu%20Mono%20Nerd%20Font%20Complete%20Mono.ttf][UbuntuMono Nerd Font Complete]], which will need to be installed for this configuration to work without any changes. If another font is more appropriate for your system, modify the :font tag in the three lines under the Font Configuration section of Emacs.org
+
+** Org Files
+
+The variables org-agenda-files and org-roam-directory are pointing to a subfolder in my home directory that will very likely not exist on your system. Change these to appropriate paths. 
+
+** Jedi
+
+I use jedi as a language server for lsp-mode. This should be installed on your system before using this configuration or just comment out or remove the last section of init.el where I am running use-package lsp-jedi.
+
+** Emacs from Scratch introduction
 
 This is an example of a fully custom Emacs configuration that you can use as inspiration when building your own!
 

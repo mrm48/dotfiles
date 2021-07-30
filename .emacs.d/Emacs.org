@@ -587,7 +587,7 @@ To execute or export code in =org-mode= code blocks, you'll need to set up =org-
     (org-babel-do-load-languages
         'org-babel-load-languages
         '((emacs-lisp . t)
-        (python . t)))
+        (python . t) (haskell . t)))
 
     (push '("conf-unix" . conf-unix) org-src-lang-modes))
 
@@ -797,6 +797,21 @@ You can use the pyvenv package to use =virtualenv= environments in Emacs.  The =
     (pyvenv-mode 1))
 
 #+end_src
+
+*** Haskell
+
+Add in haskell support
+
+#+begin_src emacs-lisp
+
+  (use-package haskell-mode
+    :ensure t
+    )
+
+
+#+end_src
+
+
 
 ** Company Mode
 

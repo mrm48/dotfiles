@@ -399,7 +399,7 @@
   (org-babel-do-load-languages
       'org-babel-load-languages
       '((emacs-lisp . t)
-      (python . t)))
+      (python . t) (haskell . t)))
 
   (push '("conf-unix" . conf-unix) org-src-lang-modes))
 
@@ -483,6 +483,10 @@
   :after python-mode
   :config
   (pyvenv-mode 1))
+
+(use-package haskell-mode
+  :ensure t
+  )
 
 (use-package company
   :after lsp-mode

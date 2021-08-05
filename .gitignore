@@ -4,3 +4,4 @@
 .emacs.d/packages/
 .emacs.d/OrgFiles/
 .emacs.d/show-notes/
+.emacs.d/forge-database.sqlite

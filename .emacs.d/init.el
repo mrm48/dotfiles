@@ -93,13 +93,13 @@
                 eshell-mode-hook))
   (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
-(set-face-attribute 'default nil :font "UbuntuMono Nerd Font Mono" :height efs/default-font-size)
+(set-face-attribute 'default nil :font "Hack" :height efs/default-font-size)
 
 ;; Set the fixed pitch face
-(set-face-attribute 'fixed-pitch nil :font "UbuntuMono Nerd Font Mono" :height efs/default-font-size)
+(set-face-attribute 'fixed-pitch nil :font "Hack" :height efs/default-font-size)
 
 ;; Set the variable pitch face
-(set-face-attribute 'variable-pitch nil :font "UbuntuMono Nerd Font Mono" :height efs/default-variable-font-size :weight 'regular)
+(set-face-attribute 'variable-pitch nil :font "Hack" :height efs/default-variable-font-size :weight 'regular)
 
 ;; Make ESC quit prompts
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)

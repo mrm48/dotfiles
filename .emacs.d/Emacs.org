@@ -157,13 +157,13 @@ I am using the [[https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fon
 
 #+begin_src emacs-lisp
 
-(set-face-attribute 'default nil :font "Hack" :height efs/default-font-size)
+(set-face-attribute 'default nil :font "UbuntuMono Nerd Font Mono" :height efs/default-font-size)
 
 ;; Set the fixed pitch face
-(set-face-attribute 'fixed-pitch nil :font "Hack" :height efs/default-font-size)
+(set-face-attribute 'fixed-pitch nil :font "UbuntuMono Nerd Font Mono" :height efs/default-font-size)
 
 ;; Set the variable pitch face
-(set-face-attribute 'variable-pitch nil :font "Hack" :height efs/default-variable-font-size :weight 'regular)
+(set-face-attribute 'variable-pitch nil :font "UbuntuMono Nerd Font Mono" :height efs/default-variable-font-size :weight 'regular)
 
 #+end_src
 
@@ -1039,6 +1039,19 @@ Dired is a built-in file manager for Emacs that does some pretty amazing things!
     (evil-collection-define-key 'normal 'dired-mode-map
       "H" 'dired-hide-dotfiles-mode))
 
+#+end_src
+
+* Elfeed
+
+Read RSS feeds into Emacs.
+
+#+begin_src emacs-lisp
+  (use-package elfeed
+    :bind (("C-x w" . elfeed))
+    :config
+    (setq elfeed-feeds
+          '("https://ubuntupodcast.org/feed/podcast/"))
+   )
 #+end_src
 
 * Applications

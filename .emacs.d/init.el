@@ -15,16 +15,16 @@
   (defun efs/display-startup-time ()
 
     ;; show a nice message or show debug information, use comments
+    (message "Emacs loaded in %s with %d garbage collections."
+             (format "%.2f seconds"
+                     (float-time
+                       (time-subtract after-init-time before-init-time)))
+             gcs-done))
+
+  (defun efs-m/display-welcome-message ()
     (message "Hello, morning people!"))
-  ;;  (message "Emacs loaded in %s with %d garbage collections."
-  ;;           (format "%.2f seconds"
-  ;;                   (float-time
-  ;;                     (time-subtract after-init-time before-init-time)))
-  ;;           gcs-done))
 
-  ;; (add-hook 'emacs-startup-hook #'efs/display-startup-time)
-
-(add-hook 'emacs-startup-hook #'efs/display-startup-time)
+(add-hook 'emacs-startup-hook #'efs-m/display-welcome-message)
 
 ;; Initialize package sources
 (require 'package)
@@ -86,12 +86,11 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; Disable line numbers for some modes
-(dolist (mode '(org-mode-hook
-                term-mode-hook
+(dolist (mode '(term-mode-hook
                 shell-mode-hook
                 treemacs-mode-hook
                 eshell-mode-hook))
-  (add-hook mode (lambda () (display-line-numbers-mode 0))))
+        (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 (set-face-attribute 'default nil :font "UbuntuMono Nerd Font Mono" :height efs/default-font-size)
 
@@ -144,7 +143,7 @@
   :commands command-log-mode)
 
 (use-package doom-themes
-  :init (load-theme 'doom-wilmersdorf t))
+  :init (load-theme 'doom-dracula t))
 
 (use-package all-the-icons)
 
@@ -387,14 +386,6 @@
   :custom
   (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
 
-(defun efs/org-mode-visual-fill ()
-  (setq visual-fill-column-width 100
-        visual-fill-column-center-text t)
-  (visual-fill-column-mode 1))
-
-(use-package visual-fill-column
-  :hook (org-mode . efs/org-mode-visual-fill))
-
 (with-eval-after-load 'org
   (org-babel-do-load-languages
       'org-babel-load-languages
@@ -583,10 +574,16 @@
     "H" 'dired-hide-dotfiles-mode))
 
 (use-package elfeed
-  :bind (("C-x w" . elfeed))
+  :bind (("C-c f v" . elfeed)
+         ("C-c f r" . elfeed-update))
   :config
   (setq elfeed-feeds
-        '("https://ubuntupodcast.org/feed/podcast/"))
+        '("https://ubuntupodcast.org/feed/podcast/"
+          "https://www.omgubuntu.co.uk/feed"
+          "cyberciti.biz/feed"
+          "itsfoss.com/feed"
+          "https://www.phoronix.com/rss.php"))
+
  )
 
 ;; Make gc pauses faster by decreasing the threshold.

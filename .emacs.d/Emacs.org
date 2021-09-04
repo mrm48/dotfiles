@@ -25,29 +25,29 @@ The following variables are used to tweak some of the configuration pieces for u
 
 In this document I've added links in many places that lead you to documentation for the various packages we use.  If you're looking at this file in Emacs, you can put your cursor on a link and press =C-c C-o= or run =M-x org-open-at-point= to open the link in your web browser.
 
-* Startup Performance
-Uncomment the definition of efs/display-startup-time and the hook to enable a startup message with performance metrics
+* Startup Performance and Welcome Message
+Add the definition of efs/display-startup-time and the hook to enable a startup message with performance metrics or use the custom welcome message
 
 #+begin_src emacs-lisp
-
-        ;; The default is 800 kilobytes.  Measured in bytes.
-        (setq gc-cons-threshold (* 50 1000 1000))
-
-        ;; Debug startup times
-        (defun efs/display-startup-time ()
-
-          ;; show a nice message or show debug information, use comments
-          (message "Hello, morning people!"))
-        ;;  (message "Emacs loaded in %s with %d garbage collections."
-        ;;           (format "%.2f seconds"
-        ;;                   (float-time
-        ;;                     (time-subtract after-init-time before-init-time)))
-        ;;           gcs-done))
-
-        ;; (add-hook 'emacs-startup-hook #'efs/display-startup-time)
-
-      (add-hook 'emacs-startup-hook #'efs/display-startup-time)
-
+  
+    ;; The default is 800 kilobytes.  Measured in bytes.
+    (setq gc-cons-threshold (* 50 1000 1000))
+  
+    ;; Debug startup times
+    (defun efs/display-startup-time ()
+  
+      ;; show a nice message or show debug information, use comments
+      (message "Emacs loaded in %s with %d garbage collections."
+               (format "%.2f seconds"
+                       (float-time
+                         (time-subtract after-init-time before-init-time)))
+               gcs-done))
+  
+    (defun efs-m/display-welcome-message ()
+      (message "Hello, morning people!"))
+  
+  (add-hook 'emacs-startup-hook #'efs-m/display-welcome-message)
+  
 #+end_src
 
 * Package System Setup
@@ -142,12 +142,11 @@ This section configures basic UI settings that remove unneeded elements to make 
   (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
   ;; Disable line numbers for some modes
-  (dolist (mode '(org-mode-hook
-                  term-mode-hook
+  (dolist (mode '(term-mode-hook
                   shell-mode-hook
                   treemacs-mode-hook
                   eshell-mode-hook))
-    (add-hook mode (lambda () (display-line-numbers-mode 0))))
+          (add-hook mode (lambda () (display-line-numbers-mode 0))))
 
 #+end_src
 
@@ -234,7 +233,7 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
 #+begin_src emacs-lisp
 
 (use-package doom-themes
-  :init (load-theme 'doom-wilmersdorf t))
+  :init (load-theme 'doom-dracula t))
 
 #+end_src
 
@@ -558,22 +557,6 @@ This section contains the basic configuration for =org-mode= plus the configurat
     :hook (org-mode . org-bullets-mode)
     :custom
     (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
-
-#+end_src
-
-*** Center Org Buffers
-
-We use [[https://github.com/joostkremers/visual-fill-column][visual-fill-column]] to center =org-mode= buffers for a more pleasing writing experience as it centers the contents of the buffer horizontally to seem more like you are editing a document.  This is really a matter of personal preference so you can remove the block below if you don't like the behavior.
-
-#+begin_src emacs-lisp
-
-  (defun efs/org-mode-visual-fill ()
-    (setq visual-fill-column-width 100
-          visual-fill-column-center-text t)
-    (visual-fill-column-mode 1))
-
-  (use-package visual-fill-column
-    :hook (org-mode . efs/org-mode-visual-fill))
 
 #+end_src
 
@@ -1046,12 +1029,18 @@ Dired is a built-in file manager for Emacs that does some pretty amazing things!
 Read RSS feeds into Emacs.
 
 #+begin_src emacs-lisp
-  (use-package elfeed
-    :bind (("C-x w" . elfeed))
-    :config
-    (setq elfeed-feeds
-          '("https://ubuntupodcast.org/feed/podcast/"))
-   )
+            (use-package elfeed
+              :bind (("C-c f v" . elfeed)
+                     ("C-c f r" . elfeed-update))
+              :config
+              (setq elfeed-feeds
+                    '("https://ubuntupodcast.org/feed/podcast/"
+                      "https://www.omgubuntu.co.uk/feed"
+                      "cyberciti.biz/feed"
+                      "itsfoss.com/feed"
+                      "https://www.phoronix.com/rss.php"))
+              
+             )
 #+end_src
 
 * Applications

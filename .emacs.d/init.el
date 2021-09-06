@@ -86,7 +86,7 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; Disable line numbers for some modes
-(dolist (mode '(term-mode-hook
+(dolist (mode '(vterm-mode-hook
                 shell-mode-hook
                 treemacs-mode-hook
                 eshell-mode-hook))
@@ -114,6 +114,7 @@
   (efs/leader-keys
     "t"  '(:ignore t :which-key "toggles")
     "tt" '(counsel-load-theme :which-key "choose theme")
+    "tr" '(counsel-recentf :which-key "recent files")
     "fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
 
 (use-package evil
@@ -139,11 +140,8 @@
   :config
   (evil-collection-init))
 
-(use-package command-log-mode
-  :commands command-log-mode)
-
 (use-package doom-themes
-  :init (load-theme 'doom-dracula t))
+  :init (load-theme 'doom-opera t))
 
 (use-package all-the-icons)
 
@@ -430,7 +428,12 @@
   (lsp-ui-doc-position 'bottom))
 
 (use-package lsp-treemacs
-  :after lsp)
+  :after lsp
+)
+
+(efs/leader-keys
+    "os" '(lsp-treemacs-symbols :which-key "show symbols")
+    "or" '(lsp-treemacs-references :which-key "show references"))
 
 (use-package lsp-ivy
   :after lsp)
@@ -494,20 +497,22 @@
   :hook (company-mode . company-box-mode))
 
 (use-package projectile
-  :diminish projectile-mode
-  :config (projectile-mode)
-  :custom ((projectile-completion-system 'ivy))
-  :bind-keymap
-  ("C-c p" . projectile-command-map)
-  :init
-  ;; NOTE: Set this to the folder where you keep your Git repos!
-  (when (file-directory-p "~/Projects/Code")
-    (setq projectile-project-search-path '("~/Projects/Code")))
-  (setq projectile-switch-project-action #'projectile-dired))
+    :diminish projectile-mode
+    :config (projectile-mode)
+    :custom ((projectile-completion-system 'ivy))
+    :bind-keymap
+    ("C-c p" . projectile-command-map)
+    :init
+    ;; NOTE: Set this to the folder where you keep your Git repos!
+    (when (file-directory-p "~/vger/Projects")
+      (setq projectile-project-search-path '("~/vger/Projects")))
+    (setq projectile-switch-project-action #'projectile-dired))
 
-(use-package counsel-projectile
-  :after projectile
-  :config (counsel-projectile-mode))
+      (use-package counsel-projectile
+    :after projectile
+    :config (counsel-projectile-mode))
+(efs/leader-keys
+  "p" '(projectile-find-file :which-key "Find file in project"))
 
 (use-package magit
   :commands magit-status

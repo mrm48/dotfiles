@@ -142,7 +142,7 @@ This section configures basic UI settings that remove unneeded elements to make 
   (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
   ;; Disable line numbers for some modes
-  (dolist (mode '(term-mode-hook
+  (dolist (mode '(vterm-mode-hook
                   shell-mode-hook
                   treemacs-mode-hook
                   eshell-mode-hook))
@@ -171,10 +171,10 @@ I am using the [[https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fon
 This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil-mode]] for a Vi-like modal editing experience.  [[https://github.com/noctuid/general.el][general.el]] is used for easy keybinding configuration that integrates well with which-key.  [[https://github.com/emacs-evil/evil-collection][evil-collection]] is used to automatically configure various Emacs modes with Vi-like keybindings for evil-mode.
 
 #+begin_src emacs-lisp
-
+  
   ;; Make ESC quit prompts
   (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-
+  
   (use-package general
     :after evil
     :config
@@ -182,12 +182,13 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
       :keymaps '(normal insert visual emacs)
       :prefix "SPC"
       :global-prefix "C-SPC")
-
+  
     (efs/leader-keys
       "t"  '(:ignore t :which-key "toggles")
       "tt" '(counsel-load-theme :which-key "choose theme")
+      "tr" '(counsel-recentf :which-key "recent files")
       "fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
-
+  
   (use-package evil
     :init
     (setq evil-want-integration t)
@@ -198,43 +199,32 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
     (evil-mode 1)
     (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
     (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
-
+  
     ;; Use visual line motions even outside of visual-line-mode buffers
     (evil-global-set-key 'motion "j" 'evil-next-visual-line)
     (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
-
+  
     (evil-set-initial-state 'messages-buffer-mode 'normal)
     (evil-set-initial-state 'dashboard-mode 'normal))
-
+  
   (use-package evil-collection
     :after evil
     :config
     (evil-collection-init))
-
+  
 #+end_src
 
 * UI Configuration
-
-** Command Log Mode
-
-[[https://github.com/lewang/command-log-mode][command-log-mode]] is useful for displaying a panel showing each key binding you use in a panel on the right side of the frame.  Great for live streams and screencasts!
-
-#+begin_src emacs-lisp
-
-  (use-package command-log-mode
-    :commands command-log-mode)
-
-#+end_src
 
 ** Color Theme
 
 [[https://github.com/hlissner/emacs-doom-themes][doom-themes]] is a great set of themes with a lot of variety and support for many different Emacs modes.  Taking a look at the [[https://github.com/hlissner/emacs-doom-themes/tree/screenshots][screenshots]] might help you decide which one you like best.  You can also run =M-x counsel-load-theme= to choose between them easily.
 
 #+begin_src emacs-lisp
-
-(use-package doom-themes
-  :init (load-theme 'doom-dracula t))
-
+  
+  (use-package doom-themes
+    :init (load-theme 'doom-opera t))
+  
 #+end_src
 
 ** Better Modeline
@@ -668,10 +658,14 @@ Try these commands with =M-x=:
 This package is built on the [[https://github.com/Alexander-Miller/treemacs][treemacs]] package which might be of some interest to you if you like to have a file browser at the left side of your screen in your editor.
 
 #+begin_src emacs-lisp
-
-  (use-package lsp-treemacs
-    :after lsp)
-
+      
+      (use-package lsp-treemacs
+        :after lsp
+      )
+      
+      (efs/leader-keys
+          "os" '(lsp-treemacs-symbols :which-key "show symbols")
+          "or" '(lsp-treemacs-references :which-key "show references"))
 #+end_src
 
 **** lsp-ivy
@@ -813,22 +807,24 @@ We also use [[https://github.com/sebastiencs/company-box][company-box]] to furth
 [[https://projectile.mx/][Projectile]] is a project management library for Emacs which makes it a lot easier to navigate around code projects for various languages.  Many packages integrate with Projectile so it's a good idea to have it installed even if you don't use its commands directly.
 
 #+begin_src emacs-lisp
-
-  (use-package projectile
-    :diminish projectile-mode
-    :config (projectile-mode)
-    :custom ((projectile-completion-system 'ivy))
-    :bind-keymap
-    ("C-c p" . projectile-command-map)
-    :init
-    ;; NOTE: Set this to the folder where you keep your Git repos!
-    (when (file-directory-p "~/Projects/Code")
-      (setq projectile-project-search-path '("~/Projects/Code")))
-    (setq projectile-switch-project-action #'projectile-dired))
-
-  (use-package counsel-projectile
-    :after projectile
-    :config (counsel-projectile-mode))
+  
+    (use-package projectile
+      :diminish projectile-mode
+      :config (projectile-mode)
+      :custom ((projectile-completion-system 'ivy))
+      :bind-keymap
+      ("C-c p" . projectile-command-map)
+      :init
+      ;; NOTE: Set this to the folder where you keep your Git repos!
+      (when (file-directory-p "~/vger/Projects")
+        (setq projectile-project-search-path '("~/vger/Projects")))
+      (setq projectile-switch-project-action #'projectile-dired))
+  
+        (use-package counsel-projectile
+      :after projectile
+      :config (counsel-projectile-mode))
+  (efs/leader-keys
+    "p" '(projectile-find-file :which-key "Find file in project"))
 
 #+end_src
 

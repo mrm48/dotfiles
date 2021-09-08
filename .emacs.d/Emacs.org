@@ -171,10 +171,10 @@ I am using the [[https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fon
 This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil-mode]] for a Vi-like modal editing experience.  [[https://github.com/noctuid/general.el][general.el]] is used for easy keybinding configuration that integrates well with which-key.  [[https://github.com/emacs-evil/evil-collection][evil-collection]] is used to automatically configure various Emacs modes with Vi-like keybindings for evil-mode.
 
 #+begin_src emacs-lisp
-  
+
   ;; Make ESC quit prompts
   (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-  
+
   (use-package general
     :after evil
     :config
@@ -182,13 +182,14 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
       :keymaps '(normal insert visual emacs)
       :prefix "SPC"
       :global-prefix "C-SPC")
-  
+
     (efs/leader-keys
       "t"  '(:ignore t :which-key "toggles")
       "tt" '(counsel-load-theme :which-key "choose theme")
       "tr" '(counsel-recentf :which-key "recent files")
+      "vt" '(vterm :which-key "terminal emulator")
       "fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
-  
+
   (use-package evil
     :init
     (setq evil-want-integration t)
@@ -199,19 +200,19 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
     (evil-mode 1)
     (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
     (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
-  
+
     ;; Use visual line motions even outside of visual-line-mode buffers
     (evil-global-set-key 'motion "j" 'evil-next-visual-line)
     (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
-  
+
     (evil-set-initial-state 'messages-buffer-mode 'normal)
     (evil-set-initial-state 'dashboard-mode 'normal))
-  
+
   (use-package evil-collection
     :after evil
     :config
     (evil-collection-init))
-  
+
 #+end_src
 
 * UI Configuration
@@ -911,7 +912,6 @@ Make sure that you have the [[https://github.com/akermu/emacs-libvterm/#requirem
 
   (use-package vterm
     :commands vterm
-    :bind (("C-c e n" . vterm))
     :config
     (setq term-prompt-regexp "^[^#$%>\n]*[#$%>] *")  ;; Set this to match your custom shell prompt
     ;;(setq vterm-shell "zsh")                       ;; Set this to customize the shell to launch
@@ -1025,18 +1025,19 @@ Dired is a built-in file manager for Emacs that does some pretty amazing things!
 Read RSS feeds into Emacs.
 
 #+begin_src emacs-lisp
-            (use-package elfeed
-              :bind (("C-c f v" . elfeed)
-                     ("C-c f r" . elfeed-update))
-              :config
-              (setq elfeed-feeds
-                    '("https://ubuntupodcast.org/feed/podcast/"
-                      "https://www.omgubuntu.co.uk/feed"
-                      "cyberciti.biz/feed"
-                      "itsfoss.com/feed"
-                      "https://www.phoronix.com/rss.php"))
+              (use-package elfeed
+                :bind (("C-c f v" . elfeed)
+                       ("C-c f r" . elfeed-update))
+                :config
+                (setq elfeed-feeds
+                      '("https://ubuntupodcast.org/feed/podcast/"
+                        "https://www.omgubuntu.co.uk/feed"
+                        "cyberciti.biz/feed"
+                        "itsfoss.com/feed"
+                        "https://www.phoronix.com/rss.php"
+                        "https://archlinux.org/feeds/news"))
               
-             )
+               )
 #+end_src
 
 * Applications

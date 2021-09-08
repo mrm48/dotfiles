@@ -115,6 +115,7 @@
     "t"  '(:ignore t :which-key "toggles")
     "tt" '(counsel-load-theme :which-key "choose theme")
     "tr" '(counsel-recentf :which-key "recent files")
+    "vt" '(vterm :which-key "terminal emulator")
     "fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
 
 (use-package evil
@@ -542,7 +543,6 @@
 
 (use-package vterm
   :commands vterm
-  :bind (("C-c e n" . vterm))
   :config
   (setq term-prompt-regexp "^[^#$%>\n]*[#$%>] *")  ;; Set this to match your custom shell prompt
   ;;(setq vterm-shell "zsh")                       ;; Set this to customize the shell to launch
@@ -587,7 +587,8 @@
           "https://www.omgubuntu.co.uk/feed"
           "cyberciti.biz/feed"
           "itsfoss.com/feed"
-          "https://www.phoronix.com/rss.php"))
+          "https://www.phoronix.com/rss.php"
+          "https://archlinux.org/feeds/news"))
 
  )
 

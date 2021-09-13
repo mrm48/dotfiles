@@ -142,8 +142,7 @@ This section configures basic UI settings that remove unneeded elements to make 
   (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
   ;; Disable line numbers for some modes
-  (dolist (mode '(vterm-mode-hook
-                  shell-mode-hook
+  (dolist (mode '(shell-mode-hook
                   treemacs-mode-hook
                   eshell-mode-hook))
           (add-hook mode (lambda () (display-line-numbers-mode 0))))
@@ -187,7 +186,6 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
       "t"  '(:ignore t :which-key "toggles")
       "tt" '(counsel-load-theme :which-key "choose theme")
       "tr" '(counsel-recentf :which-key "recent files")
-      "vt" '(vterm :which-key "terminal emulator")
       "fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
 
   (use-package evil
@@ -384,7 +382,7 @@ The =efs/org-font-setup= function configures various text faces to tweak the siz
                     (org-level-6 . 1.1)
                     (org-level-7 . 1.1)
                     (org-level-8 . 1.1)))
-      (set-face-attribute (car face) nil :font "Cantarell" :weight 'regular :height (cdr face)))
+      (set-face-attribute (car face) nil :font "UbuntuMono Nerd Font Mono" :weight 'regular :height (cdr face)))
 
     ;; Ensure that anything that should be fixed-pitch in Org files appears that way
     (set-face-attribute 'org-block nil    :foreground nil :inherit 'fixed-pitch)
@@ -870,56 +868,6 @@ Emacs' built in commenting functionality =comment-dwim= (usually bound to =M-;=)
 
 #+end_src
 
-* Terminals
-
-** term-mode
-
-=term-mode= is a built-in terminal emulator in Emacs.  Because it is written in Emacs Lisp, you can start using it immediately with very little configuration.  If you are on Linux or macOS, =term-mode= is a great choice to get started because it supports fairly complex terminal applications (=htop=, =vim=, etc) and works pretty reliably.  However, because it is written in Emacs Lisp, it can be slower than other options like =vterm=.  The speed will only be an issue if you regularly run console apps with a lot of output.
-
-One important thing to understand is =line-mode= versus =char-mode=.  =line-mode= enables you to use normal Emacs keybindings while moving around in the terminal buffer while =char-mode= sends most of your keypresses to the underlying terminal.  While using =term-mode=, you will want to be in =char-mode= for any terminal applications that have their own keybindings.  If you're just in your usual shell, =line-mode= is sufficient and feels more integrated with Emacs.
-
-With =evil-collection= installed, you will automatically switch to =char-mode= when you enter Evil's insert mode (press =i=).  You will automatically be switched back to =line-mode= when you enter Evil's normal mode (press =ESC=).
-
-Run a terminal with =M-x term!=
-
-*Useful key bindings:*
-
-- =C-c C-p= / =C-c C-n= - go back and forward in the buffer's prompts (also =[[= and =]]= with evil-mode)
-- =C-c C-k= - Enter char-mode
-- =C-c C-j= - Return to line-mode
-- If you have =evil-collection= installed, =term-mode= will enter char mode when you use Evil's Insert mode
-
-#+begin_src emacs-lisp
-
-  (use-package term
-    :commands term
-    :config
-    (setq explicit-shell-file-name "bash") ;; Change this to zsh, etc
-    ;;(setq explicit-zsh-args '())         ;; Use 'explicit-<shell>-args for shell-specific args
-
-    ;; Match the default Bash shell prompt.  Update this if you have a custom prompt
-    (setq term-prompt-regexp "^[^#$%>\n]*[#$%>] *"))
-
-#+end_src
-
-** vterm
-
-[[https://github.com/akermu/emacs-libvterm/][vterm]] is an improved terminal emulator package which uses a compiled native module to interact with the underlying terminal applications.  This enables it to be much faster than =term-mode= and to also provide a more complete terminal emulation experience.
-
-Make sure that you have the [[https://github.com/akermu/emacs-libvterm/#requirements][necessary dependencies]] installed before trying to use =vterm= because there is a module that will need to be compiled before you can use it successfully.
-
-#+begin_src emacs-lisp
-
-  (use-package vterm
-    :commands vterm
-    :config
-    (setq term-prompt-regexp "^[^#$%>\n]*[#$%>] *")  ;; Set this to match your custom shell prompt
-    ;;(setq vterm-shell "zsh")                       ;; Set this to customize the shell to launch
-    (setq vterm-max-scrollback 10000))
-
-
-#+end_src
-
 * File Management
 
 ** Dired
@@ -1030,8 +978,7 @@ Read RSS feeds into Emacs.
                        ("C-c f r" . elfeed-update))
                 :config
                 (setq elfeed-feeds
-                      '("https://ubuntupodcast.org/feed/podcast/"
-                        "https://www.omgubuntu.co.uk/feed"
+                      '("https://www.omgubuntu.co.uk/feed"
                         "cyberciti.biz/feed"
                         "itsfoss.com/feed"
                         "https://www.phoronix.com/rss.php"
@@ -1074,7 +1021,7 @@ Dial the GC threshold back down so that garbage collection happens more frequent
 
 * Custom
 
-Additional settings for vterm, ivy, lsp
+Additional settings for ivy, lsp
 
 #+begin_src emacs-lisp
 
@@ -1084,7 +1031,7 @@ Additional settings for vterm, ivy, lsp
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(package-selected-packages
-     '(lsp-jedi org-roam dired-hide-dotfiles dired-open all-the-icons-dired dired-single vterm rainbow-delimiters evil-nerd-commenter forge magit counsel-projectile projectile company-box company pyvenv python-mode dap-mode lsp-ivy lsp-treemacs lsp-ui lsp-mode visual-fill-column org-bullets hydra helpful ivy-prescient counsel ivy-rich ivy which-key doom-modeline all-the-icons doom-themes command-log-mode evil-collection evil general use-package no-littering auto-package-update)))
+     '(lsp-jedi org-roam dired-hide-dotfiles dired-open all-the-icons-dired dired-single rainbow-delimiters evil-nerd-commenter forge magit counsel-projectile projectile company-box company pyvenv python-mode dap-mode lsp-ivy lsp-treemacs lsp-ui lsp-mode visual-fill-column org-bullets hydra helpful ivy-prescient counsel ivy-rich ivy which-key doom-modeline all-the-icons doom-themes command-log-mode evil-collection evil general use-package no-littering auto-package-update)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.

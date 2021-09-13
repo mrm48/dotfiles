@@ -86,8 +86,7 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; Disable line numbers for some modes
-(dolist (mode '(vterm-mode-hook
-                shell-mode-hook
+(dolist (mode '(shell-mode-hook
                 treemacs-mode-hook
                 eshell-mode-hook))
         (add-hook mode (lambda () (display-line-numbers-mode 0))))
@@ -115,7 +114,6 @@
     "t"  '(:ignore t :which-key "toggles")
     "tt" '(counsel-load-theme :which-key "choose theme")
     "tr" '(counsel-recentf :which-key "recent files")
-    "vt" '(vterm :which-key "terminal emulator")
     "fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
 
 (use-package evil
@@ -236,7 +234,7 @@
                   (org-level-6 . 1.1)
                   (org-level-7 . 1.1)
                   (org-level-8 . 1.1)))
-    (set-face-attribute (car face) nil :font "Cantarell" :weight 'regular :height (cdr face)))
+    (set-face-attribute (car face) nil :font "UbuntuMono Nerd Font Mono" :weight 'regular :height (cdr face)))
 
   ;; Ensure that anything that should be fixed-pitch in Org files appears that way
   (set-face-attribute 'org-block nil    :foreground nil :inherit 'fixed-pitch)
@@ -532,22 +530,6 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(use-package term
-  :commands term
-  :config
-  (setq explicit-shell-file-name "bash") ;; Change this to zsh, etc
-  ;;(setq explicit-zsh-args '())         ;; Use 'explicit-<shell>-args for shell-specific args
-
-  ;; Match the default Bash shell prompt.  Update this if you have a custom prompt
-  (setq term-prompt-regexp "^[^#$%>\n]*[#$%>] *"))
-
-(use-package vterm
-  :commands vterm
-  :config
-  (setq term-prompt-regexp "^[^#$%>\n]*[#$%>] *")  ;; Set this to match your custom shell prompt
-  ;;(setq vterm-shell "zsh")                       ;; Set this to customize the shell to launch
-  (setq vterm-max-scrollback 10000))
-
 (use-package dired
   :ensure nil
   :commands (dired dired-jump)
@@ -583,8 +565,7 @@
          ("C-c f r" . elfeed-update))
   :config
   (setq elfeed-feeds
-        '("https://ubuntupodcast.org/feed/podcast/"
-          "https://www.omgubuntu.co.uk/feed"
+        '("https://www.omgubuntu.co.uk/feed"
           "cyberciti.biz/feed"
           "itsfoss.com/feed"
           "https://www.phoronix.com/rss.php"
@@ -601,7 +582,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(lsp-jedi org-roam dired-hide-dotfiles dired-open all-the-icons-dired dired-single vterm rainbow-delimiters evil-nerd-commenter forge magit counsel-projectile projectile company-box company pyvenv python-mode dap-mode lsp-ivy lsp-treemacs lsp-ui lsp-mode visual-fill-column org-bullets hydra helpful ivy-prescient counsel ivy-rich ivy which-key doom-modeline all-the-icons doom-themes command-log-mode evil-collection evil general use-package no-littering auto-package-update)))
+   '(lsp-jedi org-roam dired-hide-dotfiles dired-open all-the-icons-dired dired-single rainbow-delimiters evil-nerd-commenter forge magit counsel-projectile projectile company-box company pyvenv python-mode dap-mode lsp-ivy lsp-treemacs lsp-ui lsp-mode visual-fill-column org-bullets hydra helpful ivy-prescient counsel ivy-rich ivy which-key doom-modeline all-the-icons doom-themes command-log-mode evil-collection evil general use-package no-littering auto-package-update)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

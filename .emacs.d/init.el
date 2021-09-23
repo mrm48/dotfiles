@@ -461,21 +461,28 @@
   :config
   (setq typescript-indent-level 2))
 
-(use-package python-mode
-  :ensure t
-  :hook (python-mode . lsp-deferred)
-  :custom
-  ;; NOTE: Set these if Python 3 is called "python3" on your system!
-  ;; (python-shell-interpreter "python3")
-  ;; (dap-python-executable "python3")
-  (dap-python-debugger 'debugpy)
-  :config
-  (require 'dap-python))
+(use-package yasnippet
+:after lsp-mode
+:config
+(yas-global-mode))
+(use-package helm-xref)
+(use-package helm-lsp)
+(helm-mode)
+(require 'helm-xref)
+(define-key global-map [remap find-file] #'helm-find-files)
+(define-key global-map [remap execute-extended-command] #'helm-M-x)
+(define-key global-map [remap switch-to-buffer] #'helm-mini)
 
-(use-package pyvenv
-  :after python-mode
-  :config
-  (pyvenv-mode 1))
+(use-package flycheck)
+(use-package avy)
+
+(add-hook 'c-mode-hook 'lsp)
+(add-hook 'c++-mode-hook 'lsp)
+
+(with-eval-after-load 'lsp-mode
+(add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
+(require 'dap-cpptools)
+(yas-global-mode))
 
 (use-package haskell-mode
   :ensure t
@@ -565,11 +572,12 @@
          ("C-c f r" . elfeed-update))
   :config
   (setq elfeed-feeds
-        '("https://www.omgubuntu.co.uk/feed"
-          "cyberciti.biz/feed"
-          "itsfoss.com/feed"
-          "https://www.phoronix.com/rss.php"
-          "https://archlinux.org/feeds/news"))
+        '(("https://www.omgubuntu.co.uk/feed" news-linux)
+          ("cyberciti.biz/feed" news-linux)
+          ("itsfoss.com/feed" news-linux)
+          ("https://www.phoronix.com/rss.php" news-linux)
+          ("https://archlinux.org/feeds/news/" arch)
+          ("https://distrowatch.com/news/dw.xml" news-linux)))
 
  )
 
@@ -614,4 +622,5 @@
   :config
   (with-eval-after-load "lsp-mode"
     (add-to-list 'lsp-disabled-clients 'pyls)
-    (add-to-list 'lsp-enabled-clients 'jedi)))
+    (add-to-list 'lsp-enabled-clients 'jedi)
+    (add-to-list 'lsp-enabled-clients 'clangd)))

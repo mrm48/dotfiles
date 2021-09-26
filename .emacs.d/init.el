@@ -576,7 +576,6 @@
           ("cyberciti.biz/feed" news-linux)
           ("itsfoss.com/feed" news-linux)
           ("https://www.phoronix.com/rss.php" news-linux)
-          ("https://archlinux.org/feeds/news/" arch)
           ("https://distrowatch.com/news/dw.xml" news-linux)))
 
  )

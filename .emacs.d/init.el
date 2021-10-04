@@ -24,7 +24,7 @@
   (defun efs-m/display-welcome-message ()
     (message "Hello, morning people!"))
 
-(add-hook 'emacs-startup-hook #'efs-m/display-welcome-message)
+(add-hook 'emacs-startup-hook #'efs/display-startup-time)
 
 ;; Initialize package sources
 (require 'package)
@@ -112,8 +112,12 @@
 
   (efs/leader-keys
     "t"  '(:ignore t :which-key "toggles")
+    "a"  '(org-agenda :which-key "agenda")
+    "nn" '(org-roam-dailies-capture-today :which-key "capture daily org roam note")
     "tt" '(counsel-load-theme :which-key "choose theme")
     "tr" '(counsel-recentf :which-key "recent files")
+    "fv" '(elfeed :which-key "view rss feeds")
+    "fr" '(elfeed-update :which-key "refresh rss feeds")
     "fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
 
 (use-package evil
@@ -140,7 +144,7 @@
   (evil-collection-init))
 
 (use-package doom-themes
-  :init (load-theme 'doom-opera t))
+  :init (load-theme 'doom-dracula t))
 
 (use-package all-the-icons)
 
@@ -258,7 +262,6 @@
   :pin org
   :commands (org-capture org-agenda)
   :hook (org-mode . efs/org-mode-setup)
-  :bind (("C-c o a" . 'org-agenda))
   :config
   (setq org-ellipsis " ▾")
 
@@ -455,12 +458,6 @@
     :prefix lsp-keymap-prefix
     "d" '(dap-hydra t :wk "debugger")))
 
-(use-package typescript-mode
-  :mode "\\.ts\\'"
-  :hook (typescript-mode . lsp-deferred)
-  :config
-  (setq typescript-indent-level 2))
-
 (use-package yasnippet
 :after lsp-mode
 :config
@@ -556,10 +553,11 @@
 (use-package dired-open
   :commands (dired dired-jump)
   :config
-  ;; Doesn't work as expected!
-  ;;(add-to-list 'dired-open-functions #'dired-open-xdg t)
-  (setq dired-open-extensions '(("png" . "feh")
-                                ("mkv" . "mpv"))))
+  (setq dired-open-extensions '(("png" . "gwenview")
+                                ("jpg" . "gwenview")
+                                ("mp3" . "vlc")
+                                ("mkv" . "vlc"))))
+
 
 (use-package dired-hide-dotfiles
   :hook (dired-mode . dired-hide-dotfiles-mode)
@@ -568,9 +566,7 @@
     "H" 'dired-hide-dotfiles-mode))
 
 (use-package elfeed
-  :bind (("C-c f v" . elfeed)
-         ("C-c f r" . elfeed-update))
-  :config
+    :config
   (setq elfeed-feeds
         '(("https://www.omgubuntu.co.uk/feed" news-linux)
           ("cyberciti.biz/feed" news-linux)
@@ -621,5 +617,4 @@
   :config
   (with-eval-after-load "lsp-mode"
     (add-to-list 'lsp-disabled-clients 'pyls)
-    (add-to-list 'lsp-enabled-clients 'jedi)
     (add-to-list 'lsp-enabled-clients 'clangd)))

@@ -46,7 +46,7 @@ Add the definition of efs/display-startup-time and the hook to enable a startup 
     (defun efs-m/display-welcome-message ()
       (message "Hello, morning people!"))
   
-  (add-hook 'emacs-startup-hook #'efs-m/display-welcome-message)
+  (add-hook 'emacs-startup-hook #'efs/display-startup-time)
   
 #+end_src
 
@@ -170,10 +170,10 @@ I am using the [[https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fon
 This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil-mode]] for a Vi-like modal editing experience.  [[https://github.com/noctuid/general.el][general.el]] is used for easy keybinding configuration that integrates well with which-key.  [[https://github.com/emacs-evil/evil-collection][evil-collection]] is used to automatically configure various Emacs modes with Vi-like keybindings for evil-mode.
 
 #+begin_src emacs-lisp
-
+  
   ;; Make ESC quit prompts
   (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
-
+  
   (use-package general
     :after evil
     :config
@@ -181,13 +181,17 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
       :keymaps '(normal insert visual emacs)
       :prefix "SPC"
       :global-prefix "C-SPC")
-
+  
     (efs/leader-keys
       "t"  '(:ignore t :which-key "toggles")
+      "a"  '(org-agenda :which-key "agenda")
+      "nn" '(org-roam-dailies-capture-today :which-key "capture daily org roam note")
       "tt" '(counsel-load-theme :which-key "choose theme")
       "tr" '(counsel-recentf :which-key "recent files")
+      "fv" '(elfeed :which-key "view rss feeds")
+      "fr" '(elfeed-update :which-key "refresh rss feeds")
       "fde" '(lambda () (interactive) (find-file (expand-file-name "~/.emacs.d/Emacs.org")))))
-
+  
   (use-package evil
     :init
     (setq evil-want-integration t)
@@ -198,19 +202,19 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
     (evil-mode 1)
     (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
     (define-key evil-insert-state-map (kbd "C-h") 'evil-delete-backward-char-and-join)
-
+  
     ;; Use visual line motions even outside of visual-line-mode buffers
     (evil-global-set-key 'motion "j" 'evil-next-visual-line)
     (evil-global-set-key 'motion "k" 'evil-previous-visual-line)
-
+  
     (evil-set-initial-state 'messages-buffer-mode 'normal)
     (evil-set-initial-state 'dashboard-mode 'normal))
-
+  
   (use-package evil-collection
     :after evil
     :config
     (evil-collection-init))
-
+  
 #+end_src
 
 * UI Configuration
@@ -222,7 +226,7 @@ This configuration uses [[https://evil.readthedocs.io/en/latest/index.html][evil
 #+begin_src emacs-lisp
   
   (use-package doom-themes
-    :init (load-theme 'doom-opera t))
+    :init (load-theme 'doom-dracula t))
   
 #+end_src
 
@@ -921,7 +925,7 @@ Dired is a built-in file manager for Emacs that does some pretty amazing things!
 *** Configuration
 
 #+begin_src emacs-lisp
-
+  
   (use-package dired
     :ensure nil
     :commands (dired dired-jump)
@@ -931,27 +935,28 @@ Dired is a built-in file manager for Emacs that does some pretty amazing things!
     (evil-collection-define-key 'normal 'dired-mode-map
       "h" 'dired-single-up-directory
       "l" 'dired-single-buffer))
-
+  
   (use-package dired-single
     :commands (dired dired-jump))
-
+  
   (use-package all-the-icons-dired
     :hook (dired-mode . all-the-icons-dired-mode))
-
+  
   (use-package dired-open
     :commands (dired dired-jump)
     :config
-    ;; Doesn't work as expected!
-    ;;(add-to-list 'dired-open-functions #'dired-open-xdg t)
-    (setq dired-open-extensions '(("png" . "feh")
-                                  ("mkv" . "mpv"))))
-
+    (setq dired-open-extensions '(("png" . "gwenview")
+                                  ("jpg" . "gwenview")
+                                  ("mp3" . "vlc")
+                                  ("mkv" . "vlc"))))
+  
+  
   (use-package dired-hide-dotfiles
     :hook (dired-mode . dired-hide-dotfiles-mode)
     :config
     (evil-collection-define-key 'normal 'dired-mode-map
       "H" 'dired-hide-dotfiles-mode))
-
+  
 #+end_src
 
 * Elfeed
@@ -960,9 +965,7 @@ Read RSS feeds into Emacs.
 
 #+begin_src emacs-lisp
                 (use-package elfeed
-                  :bind (("C-c f v" . elfeed)
-                         ("C-c f r" . elfeed-update))
-                  :config
+                    :config
                   (setq elfeed-feeds
                         '(("https://www.omgubuntu.co.uk/feed" news-linux)
                           ("cyberciti.biz/feed" news-linux)
@@ -1065,7 +1068,6 @@ Add in jedi server configuration for python LSP functionality
       :config
       (with-eval-after-load "lsp-mode"
         (add-to-list 'lsp-disabled-clients 'pyls)
-        (add-to-list 'lsp-enabled-clients 'jedi)
         (add-to-list 'lsp-enabled-clients 'clangd)))
   
 #+end_src

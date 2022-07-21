@@ -3,7 +3,11 @@
 Dotfiles for syncing between machines. Included configuration:
 
 ** Emacs
-This uses [[https://github.com/daviwil/emacs-from-scratch][emacs-from-scratch]] as a starter config and includes some tweaks for using with my personal directory structure.
+This was using emacs-from-scratch, however I moved to doom emacs and will be adding that configuration here. 
 
-** Vim
-Using SpaceVim as a starter and just syncing the personal configuration (init.toml)
+** Neovim
+Previously used SpaceVim, but now using the configuration from github.com/jdhao/nvim-config with some slight tweaks
+
+** Kitty
+
+** i3

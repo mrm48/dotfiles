@@ -1,0 +1,16 @@
+{
+    "com.github.dflock.ulauncher-window-switcher": {
+        "id": "com.github.dflock.ulauncher-window-switcher",
+        "url": "https://github.com/dflock/ulauncher-window-switcher",
+        "updated_at": "2022-07-09T19:13:25.845441",
+        "last_commit": "54622e353a7d2d0421250a76cab4aafa9ca720c5",
+        "last_commit_time": "2022-01-16T17:56:00"
+    },
+    "com.github.lighttigerxiv.ulauncher-terminal-runner-extension": {
+        "id": "com.github.lighttigerxiv.ulauncher-terminal-runner-extension",
+        "url": "https://github.com/lighttigerXIV/ulauncher-terminal-runner-extension/",
+        "updated_at": "2022-07-20T06:38:03.832090",
+        "last_commit": "8cbcf85e8b3a48a45d2d181488af6e5d89bff1b0",
+        "last_commit_time": "2022-05-22T12:33:25"
+    }
+}

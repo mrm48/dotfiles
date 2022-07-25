@@ -3,3 +3,5 @@ require 'utils'
 
 -- plugin installation
 require 'plugins'
+
+require 'matt'

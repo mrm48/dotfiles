@@ -1,0 +1,40 @@
+#!/usr/bin/bash
+
+       /usr/bin/picom \
+            --daemon \
+            --config /dev/null \
+            --backend GLX --no-vsync \
+            --detect-rounded-corners \
+            --detect-client-leader \
+            --detect-transient \
+            --detect-client-opacity \
+            --glx-no-stencil \
+            --no-use-damage \
+            --mark-wmwin-focused \
+            --mark-ovredir-focused \
+            --shadow \
+            --shadow-radius=12 \
+            --shadow-opacity=0.125 \
+            --shadow-offset-x=-12 \
+            --shadow-offset-y=-12 \
+            --fading \
+            --fade-delta=8 \
+            --no-fading-destroyed-argb \
+            --xinerama-shadow-crop \
+            --use-ewmh-active-win \
+            --unredir-if-possible \
+            --unredir-if-possible-exclude "class_g = 'Mate-screensaver'" \
+            --fade-exclude "window_type *= 'menu'" \
+            --shadow-exclude "window_type *= 'dnd'" \
+            --shadow-exclude "window_type *= 'dock'" \
+            --shadow-exclude "window_type *= 'notification'" \
+            --shadow-exclude "class_g = 'albert'" \
+            --shadow-exclude "class_g = 'Cairo-clock'" \
+            --shadow-exclude "class_g = 'Conky'" \
+            --shadow-exclude "class_g = 'Firefox' && argb" \
+            --shadow-exclude "class_g ?= 'Notify-osd'" \
+            --shadow-exclude "class_g = 'Synapse'" \
+            --shadow-exclude "class_g = 'Ulauncher'" \
+            --shadow-exclude "_GTK_FRAME_EXTENTS@:c" \
+            --shadow-exclude "_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'" \
+            --shadow-exclude "_NET_WM_STATE@:32a *= '_NET_WM_STATE_MAXIMIZED'"

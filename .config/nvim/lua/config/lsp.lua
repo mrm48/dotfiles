@@ -148,6 +148,15 @@ if utils.executable('bash-language-server') then
   })
 end
 
+-- set up golang-language-server
+if utils.executable('gopls') then
+  lspconfig.gopls.setup({
+    on_attach = custom_attach,
+    capabilities = capabilities,
+  })
+end
+
+
 local sumneko_binary_path = fn.exepath("lua-language-server")
 if vim.g.is_mac or vim.g.is_linux and sumneko_binary_path ~= "" then
   local sumneko_root_path = fn.fnamemodify(sumneko_binary_path, ":h:h:h")

@@ -31,7 +31,7 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_prompt_pwd_dir_length:1
-SETUVAR fish_user_paths:/home/matt/\x2eemacs\x2ed/bin\x1e/home/matt/tools/node\x2dv14\x2e15\x2e4\x2dlinux\x2dx64/bin\x1e/home/matt/\x2elocal/bin
+SETUVAR fish_user_paths:/home/matt/go/bin\x1e/home/matt/tools/go/bin\x1e/home/matt/\x2eemacs\x2ed/bin\x1e/home/matt/tools/node\x2dv14\x2e15\x2e4\x2dlinux\x2dx64/bin\x1e/home/matt/\x2elocal/bin
 SETUVAR theme_color_scheme:terminal\x2ddark
 SETUVAR theme_display_date:no
 SETUVAR theme_display_sudo_user:yes

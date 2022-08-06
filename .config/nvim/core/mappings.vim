@@ -104,7 +104,6 @@ xnoremap / :<C-U>call feedkeys('/\%>'.(line("'<")-1).'l\%<'.(line("'>")+1)."l")<
 " Find and replace (like Sublime Text 3)
 nnoremap <C-H> :%s/
 xnoremap <C-H> :s/
-nnoremap <silent> <leader>ca :HopChar1<cr>
 
 " Change current working directory locally and print cwd after that,
 " see https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
@@ -143,12 +142,12 @@ nnoremap <silent> <leader>y :<C-U>%y<CR>
 nnoremap <silent> <leader>cl :<C-U>call utils#ToggleCursorCol()<CR>
 
 " Move current line up and down
-nnoremap <silent> <A-k> <Cmd>call utils#SwitchLine(line('.'), 'up')<CR>
-nnoremap <silent> <A-j> <Cmd>call utils#SwitchLine(line('.'), 'down')<CR>
+nnoremap <silent> <C-k> <Cmd>call utils#SwitchLine(line('.'), 'up')<CR>
+nnoremap <silent> <C-j> <Cmd>call utils#SwitchLine(line('.'), 'down')<CR>
 
 " Move current visual-line selection up and down
-xnoremap <silent> <A-k> :<C-U>call utils#MoveSelection('up')<CR>
-xnoremap <silent> <A-j> :<C-U>call utils#MoveSelection('down')<CR>
+xnoremap <silent> <C-k> :<C-U>call utils#MoveSelection('up')<CR>
+xnoremap <silent> <C-j> :<C-U>call utils#MoveSelection('down')<CR>
 
 " Replace visual selection with text in register, but not contaminate the
 " register, see also https://stackoverflow.com/q/10723700/6064933.
@@ -194,6 +193,9 @@ function! s:restore_cursor() abort
   silent! normal `y
   silent! delmarks y
 endfunction
+
+" Jump to area on screen
+nnoremap <silent> <leader>ca :HopWord<cr>
 
 " for mappings defined in lua
 lua require('custom-map')

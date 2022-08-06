@@ -54,19 +54,14 @@ function! s:theme_setup_dict.kanagawa() dict abort
   colorscheme kanagawa
 endfunction
 
+function! s:theme_setup_dict.tokyonight() dict abort
+  colorscheme tokyonight
+endfunction
+
 " Theme to directory name mapping, because theme repo name is not necessarily
 " the same as the theme name itself.
 let s:theme2dir = {
-      \ 'gruvbox8' : 'vim-gruvbox8',
-      \ 'onedark': 'onedark.nvim',
-      \ 'edge' : 'edge',
-      \ 'sonokai': 'sonokai',
-      \ 'gruvbox_material': 'gruvbox-material',
-      \ 'nord': 'nord.nvim',
-      \ 'doom_one': 'doom-one.nvim',
-      \ 'everforest' :'everforest',
-      \ 'nightfox': 'nightfox.nvim',
-      \ 'kanagawa': 'kanagawa.nvim',
+      \ 'tokyonight': 'tokyonight.nvim',
       \ }
 
 let s:theme = utils#RandElement(keys(s:theme2dir))

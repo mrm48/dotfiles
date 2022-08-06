@@ -5,3 +5,5 @@ require 'utils'
 require 'plugins'
 
 require 'matt'
+
+require 'autorust'

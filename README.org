@@ -6,7 +6,7 @@ Dotfiles for syncing between machines. Included configuration:
 This was using emacs-from-scratch, however I moved to doom emacs and will be adding that configuration here. 
 
 ** Neovim
-Previously used SpaceVim, but now using the configuration from github.com/jdhao/nvim-config with some slight tweaks
+Previously used SpaceVim, then using github.com/jdhao/nvim-config with some slight tweaks, now using a simpler configuration set up in lua
 
 ** Kitty
 

@@ -47,6 +47,7 @@
       pkgs.libsForQt5.tokodon
       pkgs.freetube
       pkgs.obs-studio
+      pkgs.thunderbird
 
       #code
       pkgs.python3

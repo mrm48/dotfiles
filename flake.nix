@@ -26,7 +26,7 @@
                 };
             };
             homeConfigurations = {
-                matt = home-manager.lib.homeManagerConfiguration {
+                ankh = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
                     modules = [ ./home.nix ];
                 };

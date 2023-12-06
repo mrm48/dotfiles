@@ -40,6 +40,7 @@
       pkgs.keepassxc
       pkgs.libsForQt5.ksshaskpass
       pkgs.brave
+      pkgs.librewolf
 
       #social
       pkgs.libsForQt5.tokodon
@@ -51,6 +52,9 @@
       pkgs.jdk19
       pkgs.neovim
       pkgs.maven
+
+      #games
+      pkgs.steam
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your

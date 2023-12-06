@@ -89,6 +89,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     NIXPKGS_ALLOW_UNFREE=1;
+    SSH_ASKPASS="/home/matt/.nix-profile/bin/ksshaskpass";
   };
 
   # Let Home Manager install and manage itself.

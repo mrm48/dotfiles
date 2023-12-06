@@ -39,6 +39,7 @@
       #tools
       pkgs.keepassxc
       pkgs.libsForQt5.ksshaskpass
+      pkgs.brave
 
       #social
       pkgs.libsForQt5.tokodon

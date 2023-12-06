@@ -1,6 +1,6 @@
 {
 
-    description = "Nix configuration as a flake";
+    description = "Nix configuration as a flake for trinsic and ankh. Using trinsic as day to day and ankh as testing";
 
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-23.11";

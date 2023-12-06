@@ -20,11 +20,19 @@
                     inherit system;
                     modules = [ ./configuration.nix ];
                 };
+                trinsic = lib.nixosSystem{
+                    inherit system;
+                    modules = [ ./configuration-trinsic.nix ];
+                };
             };
             homeConfigurations = {
                 matt = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
                     modules = [ ./home.nix ];
+                };
+                trinsic = home-manager.lib.homeManagerConfiguration {
+                    inherit pkgs;
+                    modules = [ ./home-trinsic.nix ];
                 };
             };
         };

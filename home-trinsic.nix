@@ -41,6 +41,7 @@
       pkgs.libsForQt5.ksshaskpass
       pkgs.brave
       pkgs.librewolf
+      pkgs.logseq
 
       #social
       pkgs.libsForQt5.tokodon

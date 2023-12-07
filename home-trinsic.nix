@@ -32,6 +32,8 @@
       pkgs.eza
       pkgs.git
       pkgs.alacritty
+      pkgs.tldr
+      pkgs.tmux
 
       #fonts
       pkgs.ubuntu_font_family
@@ -139,5 +141,11 @@
 		window.opacity = 0.75;
 		window.decorations = "none";
 		};
+  };
+
+  programs.tmux = {
+  	enable = true;
+  	shortcut = "a";
+	baseIndex = 1;
   };
 }

@@ -119,4 +119,12 @@
 	export PS1='\[$(tput setaf 10)\]\u\[$(tput setaf 10)\]@\[$(tput setaf 10)\]\h:\w \[$(tput setaf 1)\]$(git branch 2>/dev/null | grep '"'"'*'"'"' | colrm 1 2)\[$(tput setaf 254)\]> '
 	'';
   };
+
+  programs.alacritty.settings = {
+  	font = [{
+		normal = {
+			family = "UbuntuMono NerdFont Mono"
+		};
+	}];
+  };
 }

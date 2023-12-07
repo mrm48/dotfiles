@@ -31,6 +31,7 @@
       pkgs.bottom
       pkgs.eza
       pkgs.git
+      pkgs.alacritty
 
       #fonts
       pkgs.ubuntu_font_family

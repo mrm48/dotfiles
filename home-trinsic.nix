@@ -147,5 +147,6 @@
   	enable = true;
   	shortcut = "a";
 	baseIndex = 1;
+	terminal = "screen-256color";
   };
 }

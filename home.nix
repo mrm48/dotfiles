@@ -120,11 +120,4 @@
 	'';
   };
 
-  programs.alacritty.settings = {
-  	font = [{
-		normal = {
-			family = "UbuntuMono NerdFont Mono"
-		};
-	}];
-  };
 }

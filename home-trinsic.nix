@@ -131,11 +131,13 @@
 	'';
   };
 
-  programs.alacritty.settings = {
-  	font = [{
-		normal = {
-			family = "UbuntuMono NerdFont Mono";
+  programs.alacritty = {
+  	enable = true;
+	settings = {
+  		font.normal.family = "UbuntuMono NerdFont Mono"; 
+		font.size = 16;
+		window.opacity = 0.75;
+		window.decorations = "none";
 		};
-	}];
   };
 }

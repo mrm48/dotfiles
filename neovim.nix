@@ -2,10 +2,9 @@
 {
   programs.neovim = {
     enable = true;
-    plugins = [
-      {
-        plugin = pkgs.vimPlugins.nvim-jdtls;
-      }
+    plugins = with pkgs.vimPlugins; [
+      vim-nix
+      nvim-jdtls
     ];
     extraLuaConfig = ''
         vim.g.mapleader = " "

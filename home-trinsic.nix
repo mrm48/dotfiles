@@ -55,7 +55,6 @@
       #code
       pkgs.python3
       pkgs.jdk19
-      pkgs.neovim
       pkgs.maven
 
       #games
@@ -108,6 +107,7 @@
   programs.home-manager.enable = true;
 
   programs.neovim = {
+    enable = true;
     plugins = [
       {
         plugin = pkgs.vimPlugins.nvim-jdtls;

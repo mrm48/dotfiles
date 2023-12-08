@@ -25,6 +25,9 @@
                     modules = [ ./configuration-trinsic.nix ];
                 };
             };
+	    home-manager = {
+	    	useUserPackages = true;
+	    };
             homeConfigurations = {
                 ankh = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
@@ -32,7 +35,7 @@
                 };
                 trinsic = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
-                    modules = [ ./home-trinsic.nix ];
+                    modules = [ ./home-trinsic.nix ./neovim.nix ];
                 };
             };
         };

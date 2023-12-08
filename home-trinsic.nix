@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-
+{ inputs, outputs, lib, config, pkgs, ... }:
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -63,12 +62,6 @@
       #ui
       pkgs.papirus-icon-theme
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -105,15 +98,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  programs.neovim = {
-    enable = true;
-    plugins = [
-      {
-        plugin = pkgs.vimPlugins.nvim-jdtls;
-      }
-    ];
-  };
 
   programs.git = {
     enable = true;

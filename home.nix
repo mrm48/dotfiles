@@ -40,7 +40,6 @@
       pkgs.keepassxc
       pkgs.libsForQt5.ksshaskpass
       pkgs.brave
-      pkgs.gnome.gnome-boxes
 
       #social
       pkgs.libsForQt5.tokodon
@@ -49,9 +48,6 @@
 
       #code
       pkgs.python3
-
-      #game dev testing
-      pkgs.godot_4
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your
@@ -94,14 +90,6 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  programs.neovim = {
-    plugins = [
-      {
-        plugin = pkgs.vimPlugins.nvim-jdtls;
-      }
-    ];
-  };
 
   programs.git = {
     enable = true;

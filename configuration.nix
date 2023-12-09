@@ -89,6 +89,7 @@
     packages = with pkgs; [
       firefox
       kate
+      direnv
     #  thunderbird
     ];
   };

@@ -40,6 +40,7 @@
       pkgs.keepassxc
       pkgs.libsForQt5.ksshaskpass
       pkgs.brave
+      pkgs.gnome.gnome-boxes
 
       #social
       pkgs.libsForQt5.tokodon

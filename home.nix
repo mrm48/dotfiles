@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-
+{ inputs, outputs, lib, config, pkgs, ... }:
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -31,6 +30,9 @@
       pkgs.bottom
       pkgs.eza
       pkgs.git
+      pkgs.alacritty
+      pkgs.tldr
+      pkgs.tmux
 
       #fonts
       pkgs.ubuntu_font_family
@@ -48,13 +50,11 @@
 
       #code
       pkgs.python3
+      pkgs.gcc
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+      #ui
+      pkgs.papirus-icon-theme
+
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -86,6 +86,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     NIXPKGS_ALLOW_UNFREE=1;
+    SSH_ASKPASS="/home/matt/.nix-profile/bin/ksshaskpass";
   };
 
   # Let Home Manager install and manage itself.
@@ -101,12 +102,37 @@
   programs.bash = {
     enable = true;
     shellAliases = {
-      eza = "eza -lar --icons";
-      codetree = "eza -lr --tree --icons";
+      codetree = "eza -lr --tree";
     };
     bashrcExtra = ''
 	export PS1='\[$(tput setaf 10)\]\u\[$(tput setaf 10)\]@\[$(tput setaf 10)\]\h:\w \[$(tput setaf 1)\]$(git branch 2>/dev/null | grep '"'"'*'"'"' | colrm 1 2)\[$(tput setaf 254)\]> '
 	'';
   };
 
+  programs.alacritty = {
+  	enable = true;
+	settings = {
+  		font.normal.family = "UbuntuMono NerdFont Mono";
+		font.size = 16;
+		window.opacity = 0.75;
+		window.decorations = "none";
+		};
+  };
+
+  programs.tmux = {
+  	enable = true;
+  	shortcut = "a";
+	baseIndex = 1;
+	terminal = "screen-256color";
+  };
+
+  programs.eza = {
+      enable = true;
+      icons = true;
+      extraOptions = [
+        "-lar"
+      ];
+      git = true;
+      enableAliases = true;
+  };
 }

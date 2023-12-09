@@ -50,12 +50,10 @@
       #code
       pkgs.python3
       pkgs.jdk19
-      pkgs.neovim
       pkgs.maven
 
       #game dev testing
       pkgs.godot_4
-      pkgs.flatpak-builder
 
     # # You can also create simple shell scripts directly inside your
     # # configuration. For example, this adds a command 'my-hello' to your

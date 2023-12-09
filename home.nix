@@ -49,6 +49,7 @@
 
       #code
       pkgs.python3
+      pkgs.gnome.gitg
 
       #game dev testing
       pkgs.godot_4

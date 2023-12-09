@@ -53,8 +53,6 @@
 
       #code
       pkgs.python3
-      pkgs.jdk19
-      pkgs.maven
       pkgs.gcc
 
       #games

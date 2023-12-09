@@ -35,7 +35,7 @@
                 };
                 trinsic = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
-                    modules = [ ./home-trinsic.nix ./neovim.nix ];
+                    modules = [ ./home-trinsic.nix ./trinsic.nix ./neovim.nix ];
                 };
             };
         };

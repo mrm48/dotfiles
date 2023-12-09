@@ -42,21 +42,15 @@
       pkgs.keepassxc
       pkgs.libsForQt5.ksshaskpass
       pkgs.brave
-      pkgs.librewolf
-      pkgs.logseq
 
       #social
       pkgs.libsForQt5.tokodon
       pkgs.freetube
       pkgs.obs-studio
-      pkgs.thunderbird
 
       #code
       pkgs.python3
       pkgs.gcc
-
-      #games
-      pkgs.steam
 
       #ui
       pkgs.papirus-icon-theme

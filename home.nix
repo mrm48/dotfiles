@@ -49,8 +49,6 @@
 
       #code
       pkgs.python3
-      pkgs.jdk19
-      pkgs.maven
 
       #game dev testing
       pkgs.godot_4

@@ -49,8 +49,8 @@
       pkgs.obs-studio
 
       #code
-      pkgs.python3
-      pkgs.gcc
+      pkgs.python3 # what is this needed for?
+      pkgs.gcc # required for Treesitter
 
       #ui
       pkgs.papirus-icon-theme
@@ -113,7 +113,7 @@
   	enable = true;
 	settings = {
   		font.normal.family = "UbuntuMono NerdFont Mono";
-		font.size = 16;
+		font.size = 18;
 		window.opacity = 0.75;
 		window.decorations = "none";
 		};

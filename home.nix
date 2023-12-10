@@ -41,6 +41,7 @@
       #tools
       pkgs.keepassxc
       pkgs.libsForQt5.ksshaskpass
+      pkgs.libsForQt5.kclock
       pkgs.brave
 
       #social

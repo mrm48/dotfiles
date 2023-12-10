@@ -10,6 +10,7 @@
 
     #social
     pkgs.thunderbird
+    pkgs.discord
 
     #games
     pkgs.steam

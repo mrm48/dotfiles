@@ -56,6 +56,13 @@
       #ui
       pkgs.papirus-icon-theme
 
+
+      # You can also create simple shell scripts directly inside your
+      # configuration. For example, this adds a command 'my-hello' to your
+      # environment:
+      (pkgs.writeShellScriptBin "launchtmux" ''
+        tmux new -s "nixmux"
+      '')
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

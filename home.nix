@@ -62,7 +62,11 @@
       # environment:
       (pkgs.writeShellScriptBin "launchtmux" ''
         tmux new -s "nixmux"
-      '')
+        '')
+
+      (pkgs.writeShellScriptBin "sshadd" ''
+        eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519
+        '')
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

@@ -143,4 +143,9 @@
       git = true;
       enableAliases = true;
   };
+
+  services.ssh-agent = {
+    enable = true;
+  };
+
 }

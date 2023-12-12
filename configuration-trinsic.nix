@@ -16,12 +16,7 @@
 
   boot.initrd.luks.devices."luks-e7e0d04a-32c6-46bd-a7f1-e40c4479ddc6".device = "/dev/disk/by-uuid/e7e0d04a-32c6-46bd-a7f1-e40c4479ddc6";
   boot.initrd.availableKernelModules = [ "xhci_pci" "nvme" "usb_storage" "usbhid" "sd_mod" "hid_generic" "hid_asus" ];
-  networking.hostName = "trinsic"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  networking.hostName = "trinsic";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -83,9 +78,6 @@
     #media-session.enable = true;
   };
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.matt = {
     isNormalUser = true;
@@ -95,7 +87,6 @@
       firefox
       kate
       git
-    #  thunderbird
     ];
   };
 
@@ -151,8 +142,6 @@
     '';
     };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
@@ -177,12 +166,6 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "23.11"; 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }

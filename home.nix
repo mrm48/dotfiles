@@ -114,6 +114,11 @@
     userEmail = "mmiller@crispyecho.com";
     difftastic.enable = true;
     difftastic.color = "always";
+    extraConfig = {
+      core = {
+        askpass = "/home/matt/.nix-profile/bin/ksshaskpass";
+      };
+    };
   };
 
   programs.bash = {

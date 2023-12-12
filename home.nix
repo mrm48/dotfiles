@@ -43,6 +43,7 @@
       pkgs.libsForQt5.ksshaskpass
       pkgs.libsForQt5.kclock
       pkgs.brave
+      pkgs.ripgrep
 
       #social
       pkgs.libsForQt5.tokodon

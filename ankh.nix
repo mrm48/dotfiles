@@ -7,7 +7,7 @@
 
     #tools
     pkgs.gnome.gnome-boxes
-    pkgs.gnome.gnome-tweak
+    pkgs.gnome.gnome-tweaks
 
     #game dev testing
     pkgs.godot_4

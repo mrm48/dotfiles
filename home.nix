@@ -102,6 +102,7 @@
     EDITOR = "nvim";
     NIXPKGS_ALLOW_UNFREE=1;
     SSH_ASKPASS="/home/matt/.nix-profile/bin/ksshaskpass";
+    SSH_ASKPASS_REQUIRE="prefer";
   };
 
   # Let Home Manager install and manage itself.

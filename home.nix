@@ -30,6 +30,7 @@
       pkgs.bottom
       pkgs.eza
       pkgs.git
+      pkgs.gitui
       pkgs.alacritty
       pkgs.tldr
       pkgs.tmux
@@ -44,6 +45,7 @@
       pkgs.libsForQt5.kclock
       pkgs.brave
       pkgs.ripgrep
+      pkgs.difftastic
 
       #social
       pkgs.libsForQt5.tokodon
@@ -109,7 +111,8 @@
     enable = true;
     userName = "Matt Miller";
     userEmail = "mmiller@crispyecho.com";
-
+    difftastic.enable = true;
+    difftastic.color = "always";
   };
 
   programs.bash = {

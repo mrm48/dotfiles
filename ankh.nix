@@ -12,6 +12,7 @@
     pkgs.gnomeExtensions.blur-my-shell
     pkgs.gnomeExtensions.dash-to-dock
     pkgs.gnomeExtensions.dash-to-panel
+    pkgs.gnomeExtensions.blur-my-shell
     pkgs.gnomeExtensions.caffeine
 
     #game dev testing

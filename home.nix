@@ -78,7 +78,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     NIXPKGS_ALLOW_UNFREE=1;
-    SSH_ASKPASS_REQUIRE="prefer";
+    # SSH_ASKPASS_REQUIRE="prefer";
   };
 
   programs.home-manager.enable = true;

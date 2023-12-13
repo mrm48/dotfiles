@@ -33,8 +33,6 @@
 
       #tools
       pkgs.keepassxc
-      pkgs.libsForQt5.ksshaskpass
-      pkgs.libsForQt5.kclock
       pkgs.brave
       pkgs.ripgrep
       pkgs.difftastic
@@ -80,7 +78,6 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     NIXPKGS_ALLOW_UNFREE=1;
-    SSH_ASKPASS="/home/matt/.nix-profile/bin/ksshaskpass";
     SSH_ASKPASS_REQUIRE="prefer";
   };
 
@@ -92,11 +89,10 @@
     userEmail = "mmiller@crispyecho.com";
     difftastic.enable = true;
     difftastic.color = "always";
-    extraConfig = {
-      core = {
-        askpass = "/home/matt/.nix-profile/bin/ksshaskpass";
-      };
-    };
+    #extraConfig = {
+    #  core = {
+    #  };
+    #};
   };
 
   programs.bash = {

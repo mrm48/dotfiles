@@ -131,6 +131,11 @@
       ];
       git = true;
       enableAliases = true;
+    };
+
+  programs.zoxide = {
+      enable = true;
+      enableBashIntegration = true;
   };
 
   services.ssh-agent = {

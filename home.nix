@@ -52,12 +52,13 @@
       pkgs.papirus-icon-theme
 
       (pkgs.writeShellScriptBin "launchtmux" ''
-        tmux new -s "nixmux"
+        tmux has-session -t "nixmux"
+        if [ $? != 0 ]; then
+          tmux new -s "nixmux"
+        fi
+        tmux attach
         '')
 
-      (pkgs.writeShellScriptBin "sshadd" ''
-        eval "$(ssh-agent -s)" && ssh-add ~/.ssh/id_ed25519
-        '')
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -105,6 +106,9 @@
     bashrcExtra = ''
     export PS1='\[$(tput setaf 10)\]\u\[$(tput setaf 10)\]@\[$(tput setaf 10)\]\h:\w \[$(tput setaf 1)\]$(git branch 2>/dev/null | grep '"'"'*'"'"' | colrm 1 2)\[$(tput setaf 254)\]> '
     eval "$(zoxide init bash)"
+    if ! { [ "$TERM" = "screen-256color" ] && [ -n "$TMUX" ]; } then
+      launchtmux
+    fi
 	'';
   };
 

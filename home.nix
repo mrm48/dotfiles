@@ -24,6 +24,7 @@
       pkgs.alacritty
       pkgs.tldr
       pkgs.tmux
+      pkgs.zoxide
 
       #fonts
       pkgs.ubuntu_font_family

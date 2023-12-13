@@ -54,7 +54,8 @@
       (pkgs.writeShellScriptBin "launchtmux" ''
         tmux has-session -t "nixmux"
         if [ $? != 0 ]; then
-          tmux new -s "nixmux"
+          tmux new-session -d -s "nixmux" -n nvim
+          tmux new-window -n gitui -t nixmux
         fi
         tmux attach
         '')

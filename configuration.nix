@@ -83,7 +83,6 @@
       firefox
       kate
       direnv
-    #  thunderbird
     ];
   };
 

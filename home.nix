@@ -123,7 +123,10 @@
   	enable = true;
   	shortcut = "a";
 	baseIndex = 1;
-	terminal = "screen-256color";
+    terminal = "screen-256color";
+    extraConfig = ''
+      set -g status-right "#[fg=black]%d %b %Y %l:%M %p"
+    '';
   };
 
   programs.eza = {

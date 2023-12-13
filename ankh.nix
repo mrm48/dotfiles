@@ -5,7 +5,7 @@
 
   home.packages = [
 
-    #tools
+    #gnome extensions
     pkgs.gnome.gnome-boxes
     pkgs.gnome.gnome-tweaks
     pkgs.chrome-gnome-shell

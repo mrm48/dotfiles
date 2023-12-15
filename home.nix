@@ -38,7 +38,6 @@
       pkgs.difftastic
 
       #social
-      pkgs.libsForQt5.tokodon
       pkgs.freetube
       pkgs.obs-studio
 

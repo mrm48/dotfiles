@@ -18,11 +18,11 @@
             nixosConfigurations = {
                 ankh = lib.nixosSystem{
                     inherit system;
-                    modules = [ ./configuration.nix ./configuration-all.nix ];
+                    modules = [ ./ankh/configuration.nix ./configuration-all.nix ];
                 };
                 trinsic = lib.nixosSystem{
                     inherit system;
-                    modules = [ ./configuration-trinsic.nix ./configuration-all.nix ];
+                    modules = [ ./trinsic/configuration.nix ./configuration-all.nix ];
                 };
             };
 	    home-manager = {
@@ -31,11 +31,11 @@
             homeConfigurations = {
                 ankh = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
-                    modules = [ ./home.nix ./ankh.nix ];
+                    modules = [ ./home.nix ./ankh/home.nix ];
                 };
                 trinsic = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
-                    modules = [ ./home.nix ./trinsic.nix ];
+                    modules = [ ./home.nix ./trinsic/home.nix ];
                 };
             };
         };

@@ -31,11 +31,11 @@
             homeConfigurations = {
                 ankh = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
-                    modules = [ ./home.nix ./ankh.nix ./neovim.nix ];
+                    modules = [ ./home.nix ./ankh.nix ];
                 };
                 trinsic = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
-                    modules = [ ./home.nix ./trinsic.nix ./neovim.nix ];
+                    modules = [ ./home.nix ./trinsic.nix ];
                 };
             };
         };

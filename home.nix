@@ -1,7 +1,15 @@
 { inputs, outputs, lib, config, pkgs, ... }:
 {
 
-  imports = [ ./tui/init.nix ]; 
+  imports = [
+
+    # Console applications
+    ./tui/init.nix
+
+    # neovim
+    ./neovim/init.nix
+
+  ]; 
 
   home.username = "matt";
   home.homeDirectory = "/home/matt";

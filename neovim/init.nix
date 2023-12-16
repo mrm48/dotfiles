@@ -9,7 +9,8 @@
       nvim-treesitter
     ];
     extraConfig = ''
-        luafile /home/matt/.dotfiles/neovim/globalopts.lua
+      luafile /home/matt/.dotfiles/neovim/globalopts.lua
+      luafile /home/matt/.dotfiles/neovim/set.lua
     '';
     extraLuaConfig = ''
         local parser_install_dir = vim.fn.stdpath("cache") .. "/treesitters"

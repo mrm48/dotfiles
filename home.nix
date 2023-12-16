@@ -4,7 +4,7 @@
   imports = [
 
     # Console applications
-    ./tui/init.nix
+    ./console/init.nix
 
     # neovim
     ./neovim/init.nix

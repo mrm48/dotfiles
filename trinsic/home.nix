@@ -9,7 +9,6 @@
     pkgs.logseq
 
     #gnome extensions
-    pkgs.gnome.gnome-boxes
     pkgs.gnome.gnome-tweaks
     pkgs.chrome-gnome-shell
     pkgs.gnomeExtensions.blur-my-shell

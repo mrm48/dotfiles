@@ -25,8 +25,8 @@
       (pkgs.writeShellScriptBin "launchtmux" ''
         tmux has-session -t "nixmux"
         if [ $? != 0 ]; then
-          tmux new-session -d -s "nixmux" -n nvim
-          tmux new-window -n gitui -t nixmux
+          tmux new-session -d -s "nixmux" -n bash 
+          tmux new-window -n git -t nixmux
         fi
         tmux attach
         '')
@@ -34,9 +34,7 @@
   ];
 
   home.sessionVariables = {
-    EDITOR = "nvim";
     NIXPKGS_ALLOW_UNFREE=1;
-    # SSH_ASKPASS_REQUIRE="prefer";
   };
 
   programs.git = {

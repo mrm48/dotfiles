@@ -29,4 +29,8 @@
         }
     '';
   };
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
 }

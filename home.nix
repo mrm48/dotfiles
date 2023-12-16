@@ -35,7 +35,6 @@
 
       #social
       pkgs.freetube
-      pkgs.obs-studio
 
       #code
       pkgs.python3 # what is this needed for?

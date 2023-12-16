@@ -15,6 +15,9 @@
     pkgs.gnomeExtensions.blur-my-shell
     pkgs.gnomeExtensions.caffeine
 
+    #social
+    pkgs.obs-studio
+
     #game dev testing
     pkgs.godot_4
 

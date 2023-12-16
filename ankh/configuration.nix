@@ -5,6 +5,17 @@
 { config, pkgs, ... }:
 
 {
+
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+  security.polkit.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    spice-gtk
+  ];
+
+  virtualisation.spiceUSBRedirection.enable = true;
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -16,5 +27,7 @@
   boot.loader.grub.useOSProber = true;
 
   networking.hostName = "ankh"; # Define your hostname.
+
+  users.users.matt.extraGroups = [ "libvirtd" ];
 
 }

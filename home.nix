@@ -4,10 +4,10 @@
   imports = [
 
     # Console applications
-    ./console/init.nix
+    ./modules/console/init.nix
 
     # neovim
-    ./neovim/init.nix
+    ./modules/neovim/init.nix
 
   ]; 
 

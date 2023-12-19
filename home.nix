@@ -32,6 +32,7 @@
       #tools
       pkgs.keepassxc
       pkgs.brave
+      pkgs.gnome.dconf-editor
 
       #social
       pkgs.freetube

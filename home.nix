@@ -43,7 +43,6 @@
 
       #ui
       pkgs.papirus-icon-theme
-      pkgs.qogir-icon-theme
 
   ];
 

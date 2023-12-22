@@ -22,6 +22,10 @@
 
     #games
     pkgs.steam
+    pkgs.lutris
+
+    pkgs.wineWowPackages.stable
+    pkgs.winetricks
 
   ];
 

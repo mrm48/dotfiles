@@ -27,7 +27,7 @@
 
       #fonts
       pkgs.ubuntu_font_family
-      (pkgs.nerdfonts.override { fonts = [ "UbuntuMono"]; })
+      (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
       #tools
       pkgs.keepassxc

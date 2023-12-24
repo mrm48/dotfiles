@@ -79,7 +79,7 @@
   programs.alacritty = {
   	enable = true;
 	settings = {
-  		font.normal.family = "Source Code Pro";
+  		font.normal.family = "JetBrainsMono Nerd Font";
 		font.size = 18;
 		window.opacity = 0.75;
 		window.decorations = "none";

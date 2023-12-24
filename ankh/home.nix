@@ -3,24 +3,28 @@
 
 {
 
-  home.packages = [
+  home.packages = with pkgs; [
 
     #gnome extensions
-    pkgs.gnome.gnome-boxes
-    pkgs.gnome.gnome-tweaks
-    pkgs.chrome-gnome-shell
-    pkgs.gnomeExtensions.blur-my-shell
-    pkgs.gnomeExtensions.dash-to-dock
-    pkgs.gnomeExtensions.dash-to-panel
-    pkgs.gnomeExtensions.blur-my-shell
-    pkgs.gnomeExtensions.caffeine
+    gnome.gnome-boxes
+    gnome.gnome-tweaks
+    chrome-gnome-shell
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.dash-to-panel
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.caffeine
 
     #social
-    pkgs.obs-studio
+    obs-studio
 
     #game dev testing
-    pkgs.godot_4
+    godot_4
 
+    (writeShellScriptBin "setup-favorites" ''
+      # Set up favorites for gnome convert this to an autostart script
+      gsettings set org.gnome.shell favorite-apps "['Alacritty.desktop', 'firefox.desktop', 'org.gnome.Nautilus.desktop', 'com.obsproject.Studio.desktop', 'brave-browser.desktop', 'freetube.desktop']"
+    '')
   ];
 
 }

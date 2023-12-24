@@ -2,27 +2,27 @@
 {
 
 
-  home.packages = [
+  home.packages = with pkgs; [
 
       #cli
-      pkgs.bash
-      pkgs.bat
-      pkgs.just
-      pkgs.fastfetch
-      pkgs.bottom
-      pkgs.eza
-      pkgs.git
-      pkgs.gitui
-      pkgs.alacritty
-      pkgs.tldr
-      pkgs.tmux
-      pkgs.zoxide
-      pkgs.fzf
+      bash
+      bat
+      just
+      fastfetch
+      bottom
+      eza
+      git
+      gitui
+      alacritty
+      tldr
+      tmux
+      zoxide
+      fzf
 
-      pkgs.ripgrep
-      pkgs.difftastic
+      ripgrep
+      difftastic
 
-      (pkgs.writeShellScriptBin "launchtmux" ''
+      (writeShellScriptBin "launchtmux" ''
         tmux has-session -t "nixmux"
         if [ $? != 0 ]; then
           tmux new-session -d -s "nixmux" -n bash 
@@ -31,7 +31,7 @@
         tmux attach
         '')
 
-      (pkgs.writeShellScriptBin "setup-gnome" ''
+      (writeShellScriptBin "setup-gnome" ''
         # Set up keybindings for gnome convert this to an autostart script
         gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
         gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Shift><Super>k']"
@@ -39,8 +39,10 @@
         gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Super>k']"
         gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Super>j']"
         gsettings set org.gnome.desktop.input-sources xkb-options "['terminate:ctrl_alt_bksp', 'altwin:swap_alt_win', 'caps:ctrl_modifier', 'ctrl:nocaps']"
+        gsettings set org.gnome.shell disabled-extensions "['dash-to-panel@jderose9.github.com']"
+        gsettings set org.gnome.shell enabled-extensions "['dash-to-dock@micxgx.gmail.com', 'blur-my-shell@aunetx', 'caffeine@patapon.info']"
+        gsettings set org.gnome.shell favorite-apps "['Alacritty.desktop', 'librewolf.desktop', 'org.kde.kate.desktop', 'logseq.desktop', 'steam.desktop', 'freetube.desktop', 'brave-browser.desktop', 'thunderbird.desktop', 'discord.desktop']"
       '')
-
   ];
 
   home.sessionVariables = {

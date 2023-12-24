@@ -28,6 +28,10 @@
     wineWowPackages.stable
     winetricks
 
+    (writeShellScriptBin "setup-favorites" ''
+      # Set up favorites for gnome convert this to an autostart script
+      gsettings set org.gnome.shell favorite-apps "['Alacritty.desktop', 'librewolf.desktop', 'org.kde.kate.desktop', 'logseq.desktop', 'steam.desktop', 'freetube.desktop', 'brave-browser.desktop', 'thunderbird.desktop']"
+    '')
   ];
 
 }

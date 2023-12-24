@@ -2,30 +2,31 @@
 
 {
 
-  home.packages = [
+  home.packages = with pkgs; [
 
     #tools
-    pkgs.librewolf
-    pkgs.logseq
+    librewolf
+    logseq
+    kate
 
     #gnome extensions
-    pkgs.gnome.gnome-tweaks
-    pkgs.chrome-gnome-shell
-    pkgs.gnomeExtensions.blur-my-shell
-    pkgs.gnomeExtensions.dash-to-dock
-    pkgs.gnomeExtensions.dash-to-panel
-    pkgs.gnomeExtensions.caffeine
+    gnome.gnome-tweaks
+    chrome-gnome-shell
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.dash-to-dock
+    gnomeExtensions.dash-to-panel
+    gnomeExtensions.caffeine
 
     #social
-    pkgs.thunderbird
-    pkgs.discord
+    thunderbird
+    discord
 
     #games
-    pkgs.steam
-    pkgs.lutris
+    steam
+    lutris
 
-    pkgs.wineWowPackages.stable
-    pkgs.winetricks
+    wineWowPackages.stable
+    winetricks
 
   ];
 

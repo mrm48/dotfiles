@@ -31,6 +31,16 @@
         tmux attach
         '')
 
+      (pkgs.writeShellScriptBin "setup-gnome" ''
+        # Set up keybindings for gnome convert this to an autostart script
+        gsettings set org.gnome.desktop.wm.keybindings close "['<Super>w']"
+        gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "['<Shift><Super>k']"
+        gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "['<Shift><Super>j']"
+        gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "['<Super>k']"
+        gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "['<Super>j']"
+        gsettings set org.gnome.desktop.input-sources xkb-options "['terminate:ctrl_alt_bksp', 'altwin:swap_alt_win', 'caps:ctrl_modifier', 'ctrl:nocaps']"
+      '')
+
   ];
 
   home.sessionVariables = {

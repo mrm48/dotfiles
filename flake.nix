@@ -24,6 +24,10 @@
                     inherit system;
                     modules = [ ./trinsic/configuration.nix ./configuration.nix ];
                 };
+                moonstone = lib.nixosSystem{
+                    inherit system;
+                    modules = [ ./moonstone/configuration.nix ./configuration.nix ];
+                };
             };
 	    home-manager = {
 	    	useUserPackages = true;
@@ -36,6 +40,10 @@
                 trinsic = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
                     modules = [ ./home.nix ./trinsic/home.nix ];
+                };
+                moonstone = home-manager.lib.homeManagerConfiguration {
+                    inherit pkgs;
+                    modules = [ ./home.nix ./moonstone/home.nix ];
                 };
             };
         };

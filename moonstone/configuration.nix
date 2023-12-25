@@ -11,6 +11,19 @@
       ./hardware-configuration.nix
     ];
 
-  networking.hostName = "moonstone";
+  # Bootloader.
+  boot.loader.grub.enable = true;
+  boot.loader.grub.device = "/dev/sda";
+  boot.loader.grub.useOSProber = true;
+
+  # Setup keyfile
+  boot.initrd.secrets = {
+    "/crypto_keyfile.bin" = null;
+  };
+
+  boot.loader.grub.enableCryptodisk=true;
+
+  boot.initrd.luks.devices."luks-e3356525-248f-4e98-9108-16718e4b7bf6".keyFile = "/crypto_keyfile.bin";
+  networking.hostName = "moonstone"; # Define your hostname.
 
 }

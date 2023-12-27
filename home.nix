@@ -23,26 +23,26 @@
     ];
   };
 
-  home.packages = [
+  home.packages = with pkgs; [
 
       #fonts
-      pkgs.ubuntu_font_family
-      (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      ubuntu_font_family
+      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
 
       #tools
-      pkgs.keepassxc
-      pkgs.brave
-      pkgs.gnome.dconf-editor
+      keepassxc
+      brave
+      gnome.dconf-editor
 
       #social
-      pkgs.freetube
+      freetube
 
       #code
-      pkgs.python3 # what is this needed for?
-      pkgs.gcc # required for Treesitter
+      python3 # what is this needed for?
+      gcc # required for Treesitter
 
       #ui
-      pkgs.papirus-icon-theme
+      papirus-icon-theme
 
   ];
 

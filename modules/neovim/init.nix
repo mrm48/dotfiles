@@ -7,7 +7,8 @@
     plugins = with pkgs.vimPlugins; [
       vim-nix
       nvim-jdtls
-      lsp-zero-nvim
+      mason-nvim
+      mason-lspconfig-nvim
       nvim-treesitter
       telescope-nvim
       plenary-nvim
@@ -35,6 +36,11 @@
         vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
         vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
         vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+        require("mason").setup()
+        require("mason-lspconfig").setup {
+          automatic_installation = true,
+        }
     '';
   };
 

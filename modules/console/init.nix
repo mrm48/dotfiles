@@ -45,7 +45,6 @@
         gsettings set org.gnome.desktop.input-sources xkb-options "['terminate:ctrl_alt_bksp', 'altwin:swap_alt_win', 'caps:ctrl_modifier', 'ctrl:nocaps']"
         gsettings set org.gnome.shell disabled-extensions "['dash-to-panel@jderose9.github.com']"
         gsettings set org.gnome.shell enabled-extensions "['dash-to-dock@micxgx.gmail.com', 'blur-my-shell@aunetx', 'caffeine@patapon.info']"
-        gsettings set org.gnome.shell favorite-apps "['Alacritty.desktop', 'librewolf.desktop', 'org.kde.kate.desktop', 'logseq.desktop', 'steam.desktop', 'freetube.desktop', 'brave-browser.desktop', 'thunderbird.desktop', 'discord.desktop']"
         gsettings set org.gnome.desktop.interface clock-format '12h'
         gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
         gsettings set org.gnome.desktop.interface document-font-name 'Ubuntu 11'

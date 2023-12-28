@@ -48,12 +48,12 @@
         gsettings set org.gnome.shell favorite-apps "['Alacritty.desktop', 'librewolf.desktop', 'org.kde.kate.desktop', 'logseq.desktop', 'steam.desktop', 'freetube.desktop', 'brave-browser.desktop', 'thunderbird.desktop', 'discord.desktop']"
         gsettings set org.gnome.desktop.interface clock-format '12h'
         gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-        gsettings set org.gnome.desktop.interface document-font-name 'Cantarell 11'
+        gsettings set org.gnome.desktop.interface document-font-name 'Ubuntu 11'
         gsettings set org.gnome.desktop.interface font-antialiasing 'grayscale'
         gsettings set org.gnome.desktop.interface font-hinting 'slight'
-        gsettings set org.gnome.desktop.interface font-name 'Cantarell 11'
+        gsettings set org.gnome.desktop.interface font-name 'Ubuntu 11'
         gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
-        gsettings set org.gnome.desktop.interface monospace-font-name 'Source Code Pro 10'
+        gsettings set org.gnome.desktop.interface monospace-font-name 'Ubuntu Mono 10'
       '')
   ];
 
@@ -91,7 +91,7 @@
   programs.alacritty = {
   	enable = true;
 	settings = {
-  		font.normal.family = "JetBrainsMono Nerd Font";
+  		font.normal.family = "UbuntuMono Nerd Font Mono";
 		font.size = 18;
 		window.opacity = 0.75;
 		window.decorations = "none";

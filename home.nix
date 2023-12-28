@@ -27,7 +27,7 @@
 
       #fonts
       ubuntu_font_family
-      (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+      (nerdfonts.override { fonts = [ "UbuntuMono" ]; })
 
       #tools
       keepassxc

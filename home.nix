@@ -1,12 +1,10 @@
 { inputs, outputs, lib, config, pkgs, ... }:
 {
 
+  # console setup and nvim
   imports = [
 
-    # Console applications
     ./modules/console/init.nix
-
-    # neovim
     ./modules/neovim/init.nix
 
   ]; 

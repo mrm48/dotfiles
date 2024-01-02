@@ -12,7 +12,10 @@
 
   environment.systemPackages = with pkgs; [
     spice-gtk
+    hyprland
   ];
+
+  programs.hyprland.enable = true;
 
   virtualisation.spiceUSBRedirection.enable = true;
 

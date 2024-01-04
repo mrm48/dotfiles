@@ -15,8 +15,6 @@
     hyprland
   ];
 
-  programs.hyprland.enable = true;
-
   virtualisation.spiceUSBRedirection.enable = true;
 
   imports =

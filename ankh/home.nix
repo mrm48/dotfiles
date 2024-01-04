@@ -10,7 +10,7 @@
                  "HDMI-A-1,1920x1080@60,1920x0,1"
       ];
 
-      env = [ "XCURSOR_SIZE=24" ];
+      env = [ "XCURSOR_SIZE,24" ];
 
       exec-once = "hyprpaper";
 

@@ -9,3 +9,7 @@ home-upgrade:
 
 cleanup:
     sudo nix-collect-garbage --delete-older-than 15d
+
+system-upgrade:
+    sudo nixos-rebuild switch --flake .#$(printf '%s' $HOSTNAME)
+    

@@ -66,10 +66,11 @@
     userEmail = "mmiller@crispyecho.com";
     difftastic.enable = true;
     difftastic.color = "always";
-    #extraConfig = {
-    #  core = {
-    #  };
-    #};
+    extraConfig = {
+      credential = {
+        helper = "store";
+      };
+    };
   };
 
   programs.bash = {

@@ -157,6 +157,7 @@
     xdg-desktop-portal-hyprland
     libsForQt5.qt5.qtwayland
     grim
+    slurp
     jq
 
   ];

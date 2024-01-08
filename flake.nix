@@ -18,6 +18,10 @@
             pkgs = nixpkgs.legacyPackages.${system};
 
         in {
+            imports = [
+              nixvim.nixosModules.nixvim
+            ];
+            programs.nixvim.enable = true; 
             nixosConfigurations = {
                 ankh = lib.nixosSystem{
                     inherit system;

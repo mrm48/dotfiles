@@ -1,4 +1,4 @@
-{ config, pkgs, nixvim, ... }:
+{ config, pkgs, ... }:
 
 {
 
@@ -84,12 +84,6 @@
       host  all      all     127.0.0.1/32   trust
     '';
     };
-
-  environment.systemModules = [ 
-    (nixvim.legacyPackages.x86-64_linux.makeNixvim {
-      colorschemes.gruvbox.enable = true;
-    })
-  ];
 
   system.stateVersion = "23.11";
 

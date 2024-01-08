@@ -6,6 +6,9 @@
         nixpkgs.url = "nixpkgs/nixos-23.11";
         home-manager.url = "github:nix-community/home-manager/release-23.11";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
+        nixvim = {
+          url = "github:nix-community/nixvim/nixos-23.11";
+        };
     };
 
     outputs = { self, nixpkgs, home-manager, ... }:

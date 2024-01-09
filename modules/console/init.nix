@@ -91,7 +91,7 @@
   programs.alacritty = {
   	enable = true;
 	settings = {
-  		font.normal.family = "UbuntuMono Nerd Font Mono";
+  		font.normal.family = "FiraMono Nerd Font";
 		font.size = 18;
 		window.opacity = 0.75;
 		window.decorations = "none";

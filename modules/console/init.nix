@@ -92,7 +92,7 @@
   	enable = true;
 	settings = {
   		font.normal.family = "FiraMono Nerd Font";
-		font.size = 18;
+		font.size = 14;
 		window.opacity = 0.75;
 		window.decorations = "none";
         colors = { 

@@ -12,6 +12,8 @@
       nvim-treesitter
       telescope-nvim
       plenary-nvim
+      nord-nvim
+      lualine-nvim
     ];
     extraConfig = ''
       luafile /home/matt/.dotfiles/modules/neovim/globalopts.lua
@@ -40,6 +42,23 @@
         require("mason").setup()
         require("mason-lspconfig").setup {
           automatic_installation = true,
+        }
+
+        vim.g.nord_contrast = true
+        vim.g.nord_borders = false
+        vim.g.nord_disable_background = true
+        vim.g.nord_italic = false
+        vim.g.uniform_diff_background = false
+        vim.g.nord_bold = false
+
+        require('nord').set()
+
+        vim.cmd[[colorscheme nord]]
+
+        require('lualine').setup {
+          options = {
+            theme = 'nord'
+          }
         }
     '';
   };

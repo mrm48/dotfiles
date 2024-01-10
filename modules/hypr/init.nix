@@ -107,7 +107,6 @@
         "$mainMod, R, exec, wofi --show drun"
         "$mainMod, P, pseudo"
         "$mainMod, C, togglesplit"
-  
         "$mainMod, H, movefocus, l"
         "$mainMod, L, movefocus, r"
         "$mainMod, K, movefocus, u"

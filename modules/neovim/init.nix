@@ -15,6 +15,8 @@
       nord-nvim
       lualine-nvim
       harpoon
+      bufferline-nvim
+      nvim-web-devicons
     ];
     extraConfig = ''
       luafile /home/matt/.dotfiles/modules/neovim/globalopts.lua
@@ -70,6 +72,12 @@
         require('lualine').setup {
           options = {
             theme = 'nord'
+          }
+        }
+
+        require('bufferline').setup{
+          options = {
+            mode = 'tabs'
           }
         }
     '';

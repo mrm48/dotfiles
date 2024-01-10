@@ -9,7 +9,7 @@
       nvim-jdtls
       mason-nvim
       mason-lspconfig-nvim
-      nvim-treesitter
+      nvim-treesitter.withAllGrammars
       telescope-nvim
       plenary-nvim
       nord-nvim
@@ -29,8 +29,6 @@
         vim.opt.runtimepath:append(parser_install_dir)
 
         require'nvim-treesitter.configs'.setup {
-          ensure_installed = "all",
-          parser_install_dir = parser_install_dir, 
           highlight = {
             enable = true,
           },

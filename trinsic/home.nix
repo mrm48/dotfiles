@@ -16,6 +16,7 @@
     gnomeExtensions.dash-to-dock
     gnomeExtensions.dash-to-panel
     gnomeExtensions.caffeine
+    gnomeExtensions.forge
 
     #social
     thunderbird

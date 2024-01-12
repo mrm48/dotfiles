@@ -210,10 +210,4 @@
       '';
     };
 
-    home.file.".config/hypr/hyprpaper.conf".text = ''
-      preload = /home/matt/Pictures/walls/wallpaper
-
-      wallpaper = DP-1,/home/matt/Pictures/walls/wallpaper
-      wallpaper = HDMI-A-1,/home/matt/Pictures/walls/wallpaper
-    '';
 }

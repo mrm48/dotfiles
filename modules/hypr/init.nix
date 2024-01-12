@@ -9,8 +9,6 @@
 
       env = [ "XCURSOR_SIZE,24" ];
 
-      exec-once = "hyprpaper";
-
       input = {
           kb_layout = "us";
           kb_variant = "";

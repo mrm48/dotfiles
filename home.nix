@@ -35,7 +35,7 @@
       freetube
 
       #code
-      python3 # what is this needed for?
+      python3 # required for gnome extensions
       gcc # required for Treesitter
 
       #ui

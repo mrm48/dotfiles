@@ -6,6 +6,10 @@
 
 {
 
+  # Enable the Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
   security.polkit.enable = true;

@@ -2,6 +2,13 @@
 
 {
 
+  # hyprland configuration
+  imports = [
+
+   ../modules/hypr/init.nix
+
+  ]; 
+
   home.packages = with pkgs; [
 
     #tools

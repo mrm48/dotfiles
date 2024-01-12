@@ -14,6 +14,10 @@
     #tools
     librewolf
 
+    #xfce themes
+    arc-icon-theme
+    arc-theme
+
     (writeShellScriptBin "setup-favorites" ''
 
       # Set up favorites for gnome convert this to an autostart script

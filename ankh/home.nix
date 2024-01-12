@@ -48,6 +48,10 @@
       monitor= [ "DP-1,1920x1080@144,0x0,1"
                  "HDMI-A-1,1920x1080@60,1920x0,1"
       ];
+      misc = {
+        # See https://wiki.hyprland.org/Configuring/Variables/ for more
+        force_default_wallpaper = 0; # Set to 0 to disable the anime mascot wallpapers
+      };
   };
 
   home.file.".config/hypr/hyprpaper.conf".text = ''

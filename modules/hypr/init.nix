@@ -97,7 +97,7 @@
         "$shiftMod, M, exit"
         "$mainMod, E, exec, nautilus"
         "$mainMod, V, togglefloating"
-        "$mainMod, R, exec, wofi --show drun"
+        "$mainMod, R, exec, wofi --normal-window --show drun"
         "$mainMod, P, pseudo"
         "$mainMod, C, togglesplit"
         "$mainMod, H, movefocus, l"

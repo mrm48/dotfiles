@@ -32,9 +32,15 @@
   wayland.windowManager.hyprland.settings = {
       misc = {
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
-        force_default_wallpaper = 1; # Set to 0 to disable the anime mascot wallpapers
+        force_default_wallpaper = 0; # Set to 0 to disable the anime mascot wallpapers
       };
-      exec-once = "waybar";
+      exec-once = [ "waybar" "hyprpaper" ];
   };
+
+  home.file.".config/hypr/hyprpaper.conf".text = ''
+    preload = /home/matt/Pictures/walls/wallpaper
+
+    wallpaper = eDP-1,/home/matt/Pictures/walls/wallpaper
+  '';
 
 }

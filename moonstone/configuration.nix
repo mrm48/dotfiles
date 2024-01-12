@@ -13,6 +13,10 @@
 
   environment.systemPackages = with pkgs; [
     hyprland
+    
+    #xfce plugins
+    xfce.xfce4-whiskermenu-plugin
+
   ];
 
   programs.hyprland.enable = true;

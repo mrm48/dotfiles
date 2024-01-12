@@ -18,6 +18,9 @@
     arc-icon-theme
     arc-theme
 
+    #hyprland tools
+    waybar
+
     (writeShellScriptBin "setup-favorites" ''
 
       # Set up favorites for gnome convert this to an autostart script

@@ -14,14 +14,6 @@
     #tools
     librewolf
 
-    #gnome extensions
-    gnome.gnome-tweaks
-    chrome-gnome-shell
-    gnomeExtensions.blur-my-shell
-    gnomeExtensions.dash-to-dock
-    gnomeExtensions.dash-to-panel
-    gnomeExtensions.caffeine
-
     (writeShellScriptBin "setup-favorites" ''
 
       # Set up favorites for gnome convert this to an autostart script

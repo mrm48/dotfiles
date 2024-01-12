@@ -7,6 +7,10 @@
 
 {
 
+  # Enable the Desktop Environment.
+  services.xserver.desktopManager.xfce.enable = true;
+  services.xserver.displayManager.defaultSession = "xfce";
+
   environment.systemPackages = with pkgs; [
     hyprland
   ];

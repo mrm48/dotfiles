@@ -29,7 +29,6 @@
 
       #tools
       keepassxc
-      brave
       gnome.dconf-editor
 
       #social

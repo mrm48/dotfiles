@@ -39,7 +39,7 @@
 
     (writeShellScriptBin "setup-favorites" ''
       # Set up favorites for gnome convert this to an autostart script
-      gsettings set org.gnome.shell favorite-apps "['Alacritty.desktop', 'firefox.desktop', 'org.gnome.Nautilus.desktop', 'com.obsproject.Studio.desktop', 'steam.desktop', 'freetube.desktop', 'brave-browser.desktop', 'net.lutris.Lutris.desktop' ]"
+      gsettings set org.gnome.shell favorite-apps "['Alacritty.desktop', 'firefox.desktop', 'org.gnome.Nautilus.desktop', 'com.obsproject.Studio.desktop', 'steam.desktop', 'freetube.desktop', 'net.lutris.Lutris.desktop' ]"
       '')
 
     ];

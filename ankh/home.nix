@@ -21,7 +21,6 @@
     gnomeExtensions.dash-to-panel
     gnomeExtensions.blur-my-shell
     gnomeExtensions.caffeine
-    gnomeExtensions.forge
 
     #social
     obs-studio

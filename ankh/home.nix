@@ -32,10 +32,7 @@
     mediawriter
 
     #games
-    steam
-    lutris
-    wineWowPackages.stable
-    winetricks
+    protonup-qt
 
     (writeShellScriptBin "setup-favorites" ''
       # Set up favorites for gnome convert this to an autostart script

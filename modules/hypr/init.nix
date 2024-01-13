@@ -34,7 +34,7 @@
         "col.active_border" = "rgba(5e81acee) rgba(5e81acee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
   
-        layout = "dwindle";
+        layout = "master";
   
         # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
         allow_tearing = false;

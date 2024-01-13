@@ -42,7 +42,7 @@
       decoration = {
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
   
-        rounding = 10;
+        rounding = 0; # default 10
         
         blur = {
             enabled = true;

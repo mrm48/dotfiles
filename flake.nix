@@ -4,6 +4,7 @@
 
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-23.11";
+        nixpkgs-unstable.url = "nixpkgs/nixos-unstable";
         home-manager.url = "github:nix-community/home-manager/release-23.11";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -29,9 +30,9 @@
                     modules = [ ./moonstone/configuration.nix ./configuration.nix ];
                 };
             };
-	    home-manager = {
-	    	useUserPackages = true;
-	    };
+	        home-manager = {
+	    	    useUserPackages = true;
+	        };
             homeConfigurations = {
                 ankh = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
@@ -46,6 +47,7 @@
                     modules = [ ./home.nix ./moonstone/home.nix ];
                 };
             };
+            overlays = import ./overlays {inherit inputs};
         };
 
 }

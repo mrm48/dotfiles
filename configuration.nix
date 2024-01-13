@@ -56,9 +56,11 @@
     description = "Matt Miller";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
       direnv
       git
+    ];
+    unstable-packages = with pkgs.unstable; [
+      firefox
     ];
   };
 

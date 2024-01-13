@@ -58,8 +58,6 @@
     packages = with pkgs; [
       direnv
       git
-    ];
-    unstable-packages = with pkgs.unstable; [
       firefox
     ];
   };

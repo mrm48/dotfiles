@@ -47,7 +47,7 @@
                     modules = [ ./home.nix ./moonstone/home.nix ];
                 };
             };
-            overlays = import ./overlays {inherit inputs};
+            overlays = import ./overlays {inherit inputs;};
         };
 
 }

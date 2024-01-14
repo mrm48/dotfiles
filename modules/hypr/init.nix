@@ -151,6 +151,7 @@
     grim
     slurp
     jq
+    pavucontrol
 
   ];
 

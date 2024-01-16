@@ -49,7 +49,11 @@
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
         force_default_wallpaper = 0; # Set to 0 to disable the anime mascot wallpapers
       };
-      exec-once = "hyprpaper";
+      exec-once = [ 
+        "hyprpaper"
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "systemctl --user import-environment"
+      ];
   };
 
   home.file.".config/hypr/hyprpaper.conf".text = ''

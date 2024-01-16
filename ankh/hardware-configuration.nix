@@ -18,6 +18,11 @@
       fsType = "ext4";
     };
 
+  fileSystems."/run/media/matt/fd51738e-67e4-4baa-b1a2-3230db4f10e1" =
+    { device = "/dev/disk/by-uuid/fd51738e-67e4-4baa-b1a2-3230db4f10e1";
+      fsType = "ext4";
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/9f83311d-5035-46b1-815f-6e3a91537b8a"; }
     ];

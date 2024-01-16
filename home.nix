@@ -30,6 +30,7 @@
       #tools
       keepassxc
       gnome.dconf-editor
+      gimp
 
       #social
       freetube

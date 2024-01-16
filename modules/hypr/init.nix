@@ -152,7 +152,7 @@
     slurp
     jq
     pavucontrol
-    gammastep
+    wlsunset
 
   ];
 

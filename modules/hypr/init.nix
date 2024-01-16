@@ -152,6 +152,7 @@
     slurp
     jq
     pavucontrol
+    gammastep
 
   ];
 

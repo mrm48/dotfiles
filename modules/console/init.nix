@@ -80,7 +80,7 @@
     };
     
     bashrcExtra = ''
-      export PS1='\[$(tput setaf 10)\]\u\[$(tput setaf 10)\]@\[$(tput setaf 10)\]\h:\w \[$(tput setaf 1)\]$(git branch 2>/dev/null | grep '"'"'*'"'"' | colrm 1 2)\[$(tput setaf 254)\]> '
+      export PS1='\[$(tput setaf 10)\]\u\[$(tput setaf 10)\]@\[$(tput setaf 10)\]\h:\w \[$(tput setaf 1)\]$(git branch 2>/dev/null | grep '"'"'*'"'"' | colrm 1 2)\[\033[00m\]> '
       eval "$(zoxide init bash)"
       if ! { [ "$TERM" = "screen-256color" ] && [ -n "$TMUX" ]; } then
         launchtmux

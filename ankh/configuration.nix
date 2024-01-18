@@ -28,10 +28,23 @@
       ./hardware-configuration.nix
     ];
 
+  # GPU
+  hardware.opengl.driSupport = true;
+  hardware.opengl.driSupport32Bit = true;
+  hardware.opengl.extraPackages = with pkgs; [
+    amdvlk
+  ];
+  hardware.opengl.extraPackages32 = with pkgs; [
+    driversi686Linux.amdvlk
+  ];
+
+  services.xserver.videoDrivers = [ "amdgpu" ];
+
   # Bootloader.
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/sdb";
   boot.loader.grub.useOSProber = true;
+  boot.initrd.kernelModules = [ "amdgpu" ];
 
   networking.hostName = "ankh"; # Define your hostname.
 

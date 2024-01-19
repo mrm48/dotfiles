@@ -20,6 +20,7 @@
 
     #tools
     mediawriter
+    libsForQt5.kate
 
     #games
     protonup-qt

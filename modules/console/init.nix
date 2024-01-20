@@ -95,7 +95,7 @@
 
   		font.normal.family = "FiraMono Nerd Font";
 		font.size = 14;
-		window.opacity = 1;
+		window.opacity = 0.75;
 		window.decorations = "none";
       };
   };

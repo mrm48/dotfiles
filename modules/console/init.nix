@@ -15,7 +15,6 @@
       bottom
       eza
       git
-      gitui
       lazygit
       alacritty
       tldr

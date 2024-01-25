@@ -16,6 +16,7 @@
       eza
       git
       gitui
+      lazygit
       alacritty
       tldr
       tmux

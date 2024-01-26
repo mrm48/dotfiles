@@ -23,6 +23,11 @@
       fsType = "ext4";
     };
 
+  fileSystems."/run/media/matt/BigData" =
+    { device = "/dev/disk/by-uuid/b715961b-0752-4782-9c3a-c228076b531a";
+      fsType = "ext4";
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/9f83311d-5035-46b1-815f-6e3a91537b8a"; }
     ];

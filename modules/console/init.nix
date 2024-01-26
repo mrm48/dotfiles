@@ -97,6 +97,7 @@
       icons = true;
       extraOptions = [
         "-lar"
+        "--time-style=+%m/%d/%y %l:%M %P" 
       ];
       git = true;
       enableAliases = true;

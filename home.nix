@@ -4,8 +4,8 @@
   # console setup and nvim
   imports = [
 
-    ./modules/console/init.nix
-    ./modules/neovim/init.nix
+    ./modules/console
+    ./modules/neovim
 
   ]; 
 

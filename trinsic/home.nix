@@ -13,6 +13,10 @@
     thunderbird
     discord
 
+    #programming
+    jdk19
+    maven
+
   ];
 
 }

@@ -5,7 +5,7 @@
   # hyprland configuration
   imports = [
 
-   ../modules/hypr/init.nix
+   ../modules/hypr
 
   ]; 
 

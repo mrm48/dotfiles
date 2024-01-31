@@ -30,6 +30,7 @@
       #tools
       keepassxc
       gimp
+      libsForQt5.kclock
 
       #social
       freetube

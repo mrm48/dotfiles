@@ -25,7 +25,7 @@
 
       #fonts
       ubuntu_font_family
-      (nerdfonts.override { fonts = [ "UbuntuMono" "FiraMono" ]; })
+      (nerdfonts.override { fonts = [ "UbuntuMono" "FiraMono" "Hack" ]; })
 
       #tools
       keepassxc

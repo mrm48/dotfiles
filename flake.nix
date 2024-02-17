@@ -39,7 +39,7 @@
                 cove = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
                     modules = [ ./home.nix ./cove/home.nix ];
-                }
+                };
                 ankh = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
                     modules = [ ./home.nix ./ankh/home.nix ];

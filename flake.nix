@@ -3,8 +3,8 @@
     description = "Nix configuration as a flake for trinsic and ankh. Using trinsic as day to day and ankh as testing";
 
     inputs = {
-        nixpkgs.url = "nixpkgs/nixos-23.11";
-        home-manager.url = "github:nix-community/home-manager/release-23.11";
+        nixpkgs.url = "nixpkgs/nixos-unstable";
+        home-manager.url = "github:nix-community/home-manager/master";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -15,6 +15,10 @@
             pkgs = nixpkgs.legacyPackages.${system};
         in {
             nixosConfigurations = {
+                cove = lib.nixosSystem{
+                    inherit system;
+                    modules = [ ./cove/configuration.nix ./configuration.nix ];
+                };
                 ankh = lib.nixosSystem{
                     inherit system;
                     modules = [ ./ankh/configuration.nix ./configuration.nix ];
@@ -32,6 +36,10 @@
 	    	    useUserPackages = true;
 	        };
             homeConfigurations = {
+                cove = home-manager.lib.homeManagerConfiguration {
+                    inherit pkgs;
+                    modules = [ ./home.nix ./cove/home.nix ];
+                }
                 ankh = home-manager.lib.homeManagerConfiguration {
                     inherit pkgs;
                     modules = [ ./home.nix ./ankh/home.nix ];

@@ -26,6 +26,7 @@
     protonup-qt
 
     waybar
+    networkmanagerapplet
 
   ];
 
@@ -40,6 +41,7 @@
       exec-once = [ 
         "hyprpaper"
         "waybar"
+        "nm-applet --indicator"
       ];
   };
 

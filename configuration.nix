@@ -66,17 +66,6 @@
 	"matt"
   ];
 
-  services.postgresql = {
-    enable = true;
-    ensureDatabases = [ "meal" ];
-    authentication = pkgs.lib.mkOverride 10 ''
-      #type database  DBuser  auth-method
-      # ipv4
-      local all      all    trust
-      host  all      all     127.0.0.1/32   trust
-    '';
-    };
-
   system.stateVersion = "23.11";
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

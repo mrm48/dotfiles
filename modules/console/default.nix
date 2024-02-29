@@ -67,6 +67,8 @@
       if ! { [ "$TERM" = "screen-256color" ] && [ -n "$TMUX" ]; } then
         launchtmux
       fi
+      source "$(blesh-share)"/ble.sh --attach=none
+      [[ ${BLE_VERSION-} ]] && ble-attach
       eval "$(atuin init bash)"
 	'';
   };

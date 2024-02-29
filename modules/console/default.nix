@@ -255,5 +255,4 @@
     colors: *gruvbox_material_medium_dark
     '';
 
-    programs.blesh.enable = true;
 }

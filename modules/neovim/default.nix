@@ -151,11 +151,11 @@
             dim_inactive = false,
             transparent_mode = false,
         })
-        vim.cmd("colorscheme gruvbox")
+        vim.cmd("colorscheme nord")
 
         require('lualine').setup {
           options = {
-            theme = 'gruvbox'
+            theme = 'nord'
           }
         }
 

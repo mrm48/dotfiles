@@ -27,7 +27,7 @@
       #tools
       keepassxc
       gimp
-      libsForQt5.kclock
+      kdePackages.kclock
 
       #social
       freetube

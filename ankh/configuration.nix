@@ -18,6 +18,7 @@
   environment.systemPackages = with pkgs; [
     spice-gtk
     hyprland
+    blesh
   ];
 
   programs.hyprland.enable = true;

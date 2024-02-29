@@ -22,7 +22,6 @@
       zoxide
       fzf
       atuin
-      blesh
       delta
 
       ripgrep

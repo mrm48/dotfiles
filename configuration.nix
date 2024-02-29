@@ -57,6 +57,7 @@
       direnv
       git
       firefox
+      blesh
     ];
   };
 

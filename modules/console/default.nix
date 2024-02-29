@@ -67,6 +67,7 @@
       if ! { [ "$TERM" = "screen-256color" ] && [ -n "$TMUX" ]; } then
         launchtmux
       fi
+      eval "$(atuin init bash)"
 	'';
   };
 

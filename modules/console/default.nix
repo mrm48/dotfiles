@@ -21,6 +21,8 @@
       tmux
       zoxide
       fzf
+      atuin
+      blesh
 
       ripgrep
       difftastic

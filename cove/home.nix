@@ -15,15 +15,9 @@
     #social
     obs-studio
 
-    #game dev testing
-    godot_4
-
     #tools
     mediawriter
-    libsForQt5.kate
-
-    #games
-    protonup-qt
+    kdePackages.kate
 
     waybar
     networkmanagerapplet

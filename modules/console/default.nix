@@ -23,6 +23,7 @@
       fzf
       atuin
       blesh
+      delta
 
       ripgrep
       difftastic

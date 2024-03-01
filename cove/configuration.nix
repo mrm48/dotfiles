@@ -5,38 +5,47 @@
 { config, pkgs, ... }:
 
 {
-
-  # Enable the Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
-  services.flatpak.enable = true;
-
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
-  security.polkit.enable = true;
-
-  environment.systemPackages = with pkgs; [
-    spice-gtk
-    hyprland
-  ];
-
-  programs.hyprland.enable = true;
-
-  virtualisation.spiceUSBRedirection.enable = true;
-
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
   # Bootloader.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-6a91b9e9-08e2-4ac4-87a5-df00df4e0b66".device = "/dev/disk/by-uuid/6a91b9e9-08e2-4ac4-87a5-df00df4e0b66";
+  boot.initrd.luks.devices."luks-ba926a4b-2899-4372-a0b0-b8409533654f".device = "/dev/disk/by-uuid/ba926a4b-2899-4372-a0b0-b8409533654f";
   networking.hostName = "cove";
 
-  users.users.matt.extraGroups = [ "libvirtd" ];
+  # Enable the KDE Plasma Desktop Environment.
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma6.enable = true;
+
+  # Some programs need SUID wrappers, can be configured further or are
+  # started in user sessions.
+  # programs.mtr.enable = true;
+  # programs.gnupg.agent = {
+  #   enable = true;
+  #   enableSSHSupport = true;
+  # };
+
+  # List services that you want to enable:
+
+  # Enable the OpenSSH daemon.
+  # services.openssh.enable = true;
+
+  # Open ports in the firewall.
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  # networking.firewall.enable = false;
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "24.05"; # Did you read the comment?
 
 }

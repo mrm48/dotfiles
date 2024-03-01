@@ -20,6 +20,7 @@
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma6.enable = true;
+  services.flatpak.enable = true;
 
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
@@ -33,6 +34,8 @@
   programs.hyprland.enable = true;
 
   virtualisation.spiceUSBRedirection.enable = true;
+
+  users.users.matt.extraGroups = [ "libvirtd" ];
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

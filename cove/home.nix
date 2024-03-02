@@ -14,10 +14,13 @@
 
     #social
     obs-studio
+    discord
 
     #tools
     mediawriter
     kdePackages.kate
+    librewolf
+    logseq
 
     waybar
     networkmanagerapplet

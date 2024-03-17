@@ -105,7 +105,6 @@
         "--time-style=+%m/%d/%y %l:%M %P" 
       ];
       git = true;
-      enableAliases = true;
     };
 
   programs.zoxide = {

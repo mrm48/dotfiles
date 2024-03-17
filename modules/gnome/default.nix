@@ -12,6 +12,7 @@
     gnomeExtensions.dash-to-dock
     gnomeExtensions.dash-to-panel
     gnomeExtensions.caffeine
+    gnomeExtensions.logo-menu
 
     (writeShellScriptBin "setup-favorites" ''
       # Set up favorites for gnome convert this to an autostart script

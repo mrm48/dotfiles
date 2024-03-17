@@ -6,7 +6,8 @@
   # hyprland configuration
   imports = [
 
-   ../modules/hypr
+    ../modules/hypr
+    ../modules/gnome
 
   ]; 
 

@@ -61,6 +61,8 @@
     ];
   };
 
+  fonts.fontDir.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.allowed-users = [

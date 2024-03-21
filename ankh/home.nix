@@ -7,7 +7,6 @@
   imports = [
 
     ../modules/hypr
-    ../modules/gnome
 
   ]; 
 

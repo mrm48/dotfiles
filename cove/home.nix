@@ -19,6 +19,7 @@
     #tools
     mediawriter
     kate
+    gitkraken
     librewolf
     vivaldi
     vivaldi-ffmpeg-codecs

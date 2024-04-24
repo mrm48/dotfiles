@@ -8,10 +8,15 @@
     gnome.gnome-tweaks
     gnome.dconf-editor
     chrome-gnome-shell
+    gnomeExtensions.appindicator
     gnomeExtensions.blur-my-shell
     gnomeExtensions.dash-to-dock
     gnomeExtensions.dash-to-panel
     gnomeExtensions.caffeine
+    gnomeExtensions.logo-menu
+
+    #themes
+    yaru-theme
 
     (writeShellScriptBin "setup-favorites" ''
       # Set up favorites for gnome convert this to an autostart script

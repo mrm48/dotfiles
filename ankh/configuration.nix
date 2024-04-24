@@ -8,7 +8,7 @@
 
   # Enable the Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = true;
   services.flatpak.enable = true;
 
   virtualisation.libvirtd.enable = true;

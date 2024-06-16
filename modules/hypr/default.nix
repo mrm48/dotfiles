@@ -87,7 +87,7 @@
         workspace_swipe = "off";
       };
   
-      "$mainMod" = "ALT";
+      "$mainMod" = "SUPER";
       "$superMod" = "SUPERALT";
       "$shiftMod" = "SHIFTALT";
   

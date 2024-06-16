@@ -36,7 +36,7 @@
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
+  # sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -64,6 +64,10 @@
   fonts.fontDir.enable = true;
 
   nixpkgs.config.allowUnfree = true;
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron"
+  ];
 
   nix.settings.allowed-users = [
 	"matt"

@@ -12,7 +12,7 @@
   home.username = "matt";
   home.homeDirectory = "/home/matt";
 
-  home.stateVersion = "23.11";
+  home.stateVersion = "unstable";
 
   nixpkgs.config = {
     allowUnfree = true;

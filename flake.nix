@@ -3,8 +3,8 @@
     description = "Nix configuration as a flake for trinsic and ankh. Using trinsic as day to day and ankh as testing";
 
     inputs = {
-        nixpkgs.url = "nixpkgs/nixos-23.11";
-        home-manager.url = "github:nix-community/home-manager/release-23.11";
+        nixpkgs.url = "nixpkgs/nixos-unstable";
+        home-manager.url = "github:nix-community/home-manager/master";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
     };
 

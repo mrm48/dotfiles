@@ -63,10 +63,6 @@
 
   fonts.fontDir.enable = true;
 
-  programs.firefox.nativeMessagingHosts.packages = with pkgs.plasma5Packages;[
-    plasma-browser-integration
-  ];
-
   nixpkgs.config.allowUnfree = true;
 
   nix.settings.allowed-users = [

@@ -14,12 +14,12 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-ba5c5b28-d2bb-450c-9102-85479f191a99".device = "/dev/disk/by-uuid/ba5c5b28-d2bb-450c-9102-85479f191a99";
+  boot.initrd.luks.devices."luks-fb5bdac2-23b6-4bd8-81bf-009ea830ea0d".device = "/dev/disk/by-uuid/fb5bdac2-23b6-4bd8-81bf-009ea830ea0d";
   networking.hostName = "cove";
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.desktopManager.plasma6.enable = true;
   services.flatpak.enable = true;
 
   virtualisation.libvirtd.enable = true;
@@ -61,6 +61,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
 
 }

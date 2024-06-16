@@ -29,8 +29,8 @@
       keepassxc
       gimp
       inkscape
-      libsForQt5.plasma-browser-integration
-      libsForQt5.kclock
+      kdePackages.plasma-browser-integration
+      kdePackages.kclock
       mpv
       vlc
 

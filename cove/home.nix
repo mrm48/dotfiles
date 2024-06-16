@@ -14,24 +14,20 @@
 
     #social
     obs-studio
-    discord
+    #discord
 
     #tools
     mediawriter
     kate
-    gitkraken
+    #gitkraken
     librewolf
     vivaldi
     vivaldi-ffmpeg-codecs
-    logseq
+    #logseq
 
     waybar
     networkmanagerapplet
 
-  ];
-
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron"
   ];
 
 }

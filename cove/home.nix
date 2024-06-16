@@ -3,12 +3,12 @@
 
 {
 
-  # sway configuration
-  #imports = [
+  # hypr configuration
+  imports = [
 
-   #../modules/sway
+   ../modules/hypr
 
-  #];
+  ];
 
   home.packages = with pkgs; [
 
@@ -28,6 +28,10 @@
     waybar
     networkmanagerapplet
 
+  ];
+
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron"
   ];
 
 }

@@ -34,7 +34,7 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
-  }
+  };
 
   virtualisation.spiceUSBRedirection.enable = true;
 

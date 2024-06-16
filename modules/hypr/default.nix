@@ -88,8 +88,8 @@
       };
   
       "$mainMod" = "SUPER";
-      "$superMod" = "SUPERALT";
-      "$shiftMod" = "SHIFTALT";
+      "$superMod" = "ALTSUPER";
+      "$shiftMod" = "SHIFTSUPER";
   
       bind = [
         "$mainMod, RETURN, exec, alacritty"

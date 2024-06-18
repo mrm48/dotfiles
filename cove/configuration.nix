@@ -15,6 +15,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   boot.initrd.luks.devices."luks-fb5bdac2-23b6-4bd8-81bf-009ea830ea0d".device = "/dev/disk/by-uuid/fb5bdac2-23b6-4bd8-81bf-009ea830ea0d";
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   networking.hostName = "cove";
 
   # Enable the KDE Plasma Desktop Environment.

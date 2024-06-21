@@ -25,6 +25,10 @@
     vivaldi-ffmpeg-codecs
     #logseq
 
+    steam
+    lutris
+    protonup-qt
+
     waybar
     networkmanagerapplet
 

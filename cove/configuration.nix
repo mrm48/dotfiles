@@ -37,6 +37,20 @@
     xwayland.enable = true;
   };
 
+  # GPU
+  hardware.opengl.driSupport = true;
+  hardware.opengl.driSupport32Bit = true;
+  hardware.opengl.extraPackages = with pkgs; [
+    amdvlk
+  ];
+  hardware.opengl.extraPackages32 = with pkgs; [
+    driversi686Linux.amdvlk
+  ];
+
+  services.xserver.videoDrivers = [ "amdgpu" ];
+
+  # Bootloader.
+  boot.initrd.kernelModules = [ "amdgpu" ];
   virtualisation.spiceUSBRedirection.enable = true;
 
   users.users.matt.extraGroups = [ "libvirtd" ];

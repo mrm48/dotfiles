@@ -23,6 +23,7 @@
       fzf
       atuin
       delta
+      zellij
 
       ripgrep
       difftastic

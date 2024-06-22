@@ -21,8 +21,7 @@
     kate
     #gitkraken
     librewolf
-    vivaldi
-    vivaldi-ffmpeg-codecs
+    brave
     #logseq
 
     steam

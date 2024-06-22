@@ -103,11 +103,15 @@
         "--time-style=+%m/%d/%y %l:%M %P" 
       ];
       git = true;
-    };
+  };
 
   programs.zoxide = {
       enable = true;
       enableBashIntegration = true;
+  };
+
+  programs.starship = {
+      enable = true;
   };
 
   services.ssh-agent = {

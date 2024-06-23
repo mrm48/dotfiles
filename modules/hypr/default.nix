@@ -31,6 +31,19 @@
         "HDMI-A-1,1920x1080@60, 1920x0, 1"
       ];
 
+      workspace = [
+        "1, monitor:DP-1"
+        "2, monitor:DP-1"
+        "3, monitor:DP-1"
+        "4, monitor:DP-1"
+        "5, monitor:DP-1"
+        "6, monitor:HDMI-A-1"
+        "7, monitor:HDMI-A-1"
+        "8, monitor:HDMI-A-1"
+        "9, monitor:HDMI-A-1"
+        "0, monitor:HDMI-A-1"
+      ];
+
       exec-once = [ "waybar" "nm-applet" ];
 
       general = {
@@ -209,6 +222,18 @@
       }
 
       '';
-    };
+  };
+
+  programs.waybar.settings = {
+      mainBar = {
+        layer = "top";
+        position = "top";
+        height = 30;
+        output = [ "HDMI-A-1" ];
+        modules-left = [ "hyprland/workspaces" ];
+        modules-center = [ "clock" ];
+        modules-right = [ "battery" "wireplumber" "wlr/taskbar" ];
+      };
+  };
 
 }

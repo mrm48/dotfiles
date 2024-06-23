@@ -235,7 +235,7 @@
         modules-right = [ "battery" "wireplumber" "tray" ];
         clock = {
           interval = 60;
-          format = "{%a %b %OI:%M %p}";
+          #format = "{%a %b %OI:%M %p}";
           max-length = 25;
           timezones = [
             "America/New_York"

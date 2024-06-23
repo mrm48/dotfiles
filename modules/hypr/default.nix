@@ -232,9 +232,9 @@
         output = [ "DP-1" "HDMI-A-1" ];
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
-        modules-right = [ "battery" "wireplumber" "wlr/taskbar" ];
+        modules-right = [ "battery" "wireplumber" "tray" ];
         clock = {
-          format = "%l:%M %P";
+          format = "{%l:%M %P}";
         };
       };
   };

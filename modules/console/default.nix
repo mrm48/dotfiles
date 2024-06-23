@@ -68,8 +68,8 @@
       source "$(blesh-share)"/ble.sh --attach=none
       ble-attach
       eval "$(atuin init bash)"
-      export ZELLIJ_AUTO_ATTACH="true"
-      eval "$(zellij setup --generate-auto-start bash)"
+      #export ZELLIJ_AUTO_ATTACH="true"
+      #eval "$(zellij setup --generate-auto-start bash)"
 	'';
   };
 

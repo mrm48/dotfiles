@@ -234,7 +234,7 @@
         modules-center = [ "clock" ];
         modules-right = [ "battery" "wireplumber" "wlr/taskbar" ];
         clock = {
-          format = "%l:%M %P"
+          format = "%l:%M %P";
         };
       };
   };

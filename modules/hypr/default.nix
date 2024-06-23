@@ -239,6 +239,21 @@
           max-length = 25;
         };
       };
+    };
+
+  services.hyprpaper.enable = true;
+  services.hyprpaper.settings = {
+      splash = false;
+      splash_offset = 2.0;
+
+      preload = [ "/home/matt/Pictures/walls/wolf.jpg" ];
+
+      wallpaper = [
+        "DP-1,/home/matt/Pictures/walls/wolf.jpg"
+        "HDMI-A-1,/home/matt/Pictures/walls/wolf.jpg"
+      ];
+        
+
   };
 
 }

@@ -31,7 +31,7 @@
         "HDMI-A-1,1920x1080@60, 1920x0, 1"
       ];
 
-      exec-once = [ "waybar" ];
+      exec-once = [ "waybar" "nm-applet" ];
 
       general = {
         # See https://wiki.hyprland.org/Configuring/Variables/ for more

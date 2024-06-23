@@ -234,7 +234,7 @@
         modules-center = [ "clock" ];
         modules-right = [ "battery" "wireplumber" "tray" ];
         clock = {
-          format = "{%l:%M %P}";
+          format = "{%a %b %OI:%M %p}";
         };
       };
   };

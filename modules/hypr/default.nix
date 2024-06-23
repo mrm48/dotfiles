@@ -235,7 +235,7 @@
         modules-right = [ "battery" "wireplumber" "tray" ];
         clock = {
           interval = 60;
-          format = "{%a %b %I:%M %p}";
+          format = "{%a %b}";
           max-length = 25;
         };
       };

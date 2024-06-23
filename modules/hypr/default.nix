@@ -25,6 +25,13 @@
           sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
       };
 
+      monitor = [
+        "DP-1,1920x1080@144,0x0,1"
+        "HDMI-A-1,1920x1080@60, 1920x0, 1"
+      ];
+
+      exec-once = [ "waybar" ];
+
       general = {
         # See https://wiki.hyprland.org/Configuring/Variables/ for more
   

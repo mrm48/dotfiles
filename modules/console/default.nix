@@ -134,7 +134,7 @@
     };
 
   programs.ssh.enableAskPassword = true;
-  programs.ssh.askPassword = "${pkgs.ksshaskpass}"
+  programs.ssh.askPassword = "${pkgs.ksshaskpass}";
 
   services.ssh-agent = {
     enable = true;

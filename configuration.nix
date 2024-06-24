@@ -54,7 +54,6 @@
     ksshaskpass
   ];
 
-  programs.ssh.enable = true;
   programs.ssh.enableAskPassword = true;
   programs.ssh.askPassword = "${pkgs.ksshaskpass}";
 

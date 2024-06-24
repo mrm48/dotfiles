@@ -95,7 +95,7 @@
     enable = true;
     settings = {
   		font.normal.family = "UbuntuMono Nerd Font";
-		font.size = 14;
+		font.size = 16;
 		window.opacity = 0.75;
 		window.decorations = "none";
       };

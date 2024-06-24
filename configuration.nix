@@ -53,6 +53,8 @@
     zsh
   ];
 
+  programs.zsh.enable = true;
+
   users.users.matt = {
     isNormalUser = true;
     description = "Matt Miller";
@@ -63,6 +65,7 @@
       firefox
       blesh
     ];
+    shell = pkgs.zsh;
   };
 
   fonts.fontDir.enable = true;

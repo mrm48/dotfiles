@@ -51,6 +51,7 @@
 
   environment.systemPackages = with pkgs; [
     zsh
+    ksshaskpass
   ];
 
   programs.zsh.enable = true;

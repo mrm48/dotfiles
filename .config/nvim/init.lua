@@ -209,7 +209,7 @@ require("lazy").setup({
         }
 
         vim.o.background = "dark"
-        vim.cmd([[colorscheme solarized-osaka]])
+        vim.cmd([[colorscheme kanagawa]])
 
         require('gitsigns').setup()
 

@@ -151,11 +151,11 @@
             dim_inactive = false,
             transparent_mode = false,
         })
-        vim.cmd("colorscheme nord")
+        vim.cmd("colorscheme solarized-osaka")
 
         require('lualine').setup {
           options = {
-            theme = 'nord'
+            theme = 'solarized-dark'
           }
         }
 

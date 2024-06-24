@@ -198,7 +198,7 @@ require("lazy").setup({
 
         require('lualine').setup {
           options = {
-            theme = 'solarized-osaka'
+            theme = 'solarized-dark'
           }
         }
 

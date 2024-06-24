@@ -84,15 +84,10 @@
       eval "$(zoxide init zsh)"
       eval "$(atuin init zsh)"
       '';
-    
-    plugins =   {
-      name = "zsh-autosuggestions";
-      src = pkgs.fetchFromGitHub {
-        owner = "zsh-users";
-        repo = "zsh-autosuggestions";
-        rev = "v0.7.0";
-      };
-    };
+
+    enableAutosuggestions = true;
+    enableCompletion = true;
+    syntaxHighlighting = true;
   };
 
 

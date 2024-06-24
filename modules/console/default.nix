@@ -6,6 +6,7 @@
 
       #cli
       bash
+      zsh
       bat
       just
       fastfetch
@@ -73,6 +74,18 @@
 	'';
   };
 
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      codetree = "eza -lr --tree";
+    };
+
+    zshrcExtra = ''
+      eval "$(zoxide init zsh)"
+    '';
+  };
+
+
   programs.alacritty = {
     enable = true;
     settings = {
@@ -108,6 +121,7 @@
   programs.zoxide = {
       enable = true;
       enableBashIntegration = true;
+      enableZshIntegration = true;
   };
 
   programs.starship = {

@@ -55,7 +55,7 @@
   ];
 
   programs.ssh.enableAskPassword = true;
-  programs.ssh.askPassword = "${pkgs.ksshaskpass}";
+  programs.ssh.askPassword = "${pkgs.ksshaskpass}/bin/ksshaskpass";
 
   programs.zsh.enable = true;
 

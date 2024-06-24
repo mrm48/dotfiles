@@ -14,7 +14,7 @@
 
     #social
     obs-studio
-    #discord
+    discord
 
     #tools
     mediawriter

@@ -49,6 +49,10 @@
 
   };
 
+  environment.systemPackages = with pkgs; [
+    zsh
+  ];
+
   users.users.matt = {
     isNormalUser = true;
     description = "Matt Miller";

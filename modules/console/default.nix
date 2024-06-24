@@ -80,7 +80,7 @@
       codetree = "eza -lr --tree";
     };
 
-    zshrcExtra = ''
+    initExtra = ''
       eval "$(zoxide init zsh)"
     '';
   };

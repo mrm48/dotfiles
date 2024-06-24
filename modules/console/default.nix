@@ -85,9 +85,9 @@
       eval "$(atuin init zsh)"
       '';
 
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
-    syntaxHighlighting = true;
+    syntaxHighlighting.enable = true;
   };
 
 

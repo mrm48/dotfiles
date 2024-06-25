@@ -36,6 +36,7 @@
 
       #social
       freetube
+      kdePackages.kasts
 
       #code
       python3 # required for gnome extensions

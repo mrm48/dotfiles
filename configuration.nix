@@ -59,6 +59,17 @@
 
   programs.zsh.enable = true;
 
+  programs.zsh = {
+    enable = true;
+    shellAliases = {
+      codetree = "eza -lr --tree";
+    };
+
+    autosuggestions.enable = true;
+    enableCompletion = true;
+    syntaxHighlighting.enable = true;
+  };
+
   users.users.matt = {
     isNormalUser = true;
     description = "Matt Miller";

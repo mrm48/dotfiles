@@ -75,19 +75,12 @@
   };
 
   programs.zsh = {
-    enable = true;
-    shellAliases = {
-      codetree = "eza -lr --tree";
-    };
 
     initExtra = ''
       eval "$(zoxide init zsh)"
       eval "$(atuin init zsh)"
       '';
 
-    autosuggestions.enable = true;
-    enableCompletion = true;
-    syntaxHighlighting.enable = true;
   };
 
 

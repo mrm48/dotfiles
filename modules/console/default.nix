@@ -25,7 +25,7 @@
       atuin
       delta
       zellij
-
+      zsh-autocomplete
       ripgrep
       difftastic
 
@@ -81,7 +81,7 @@
     };
 
     autosuggestion.enable = true;
-    enableCompletion = true;
+    enableCompletion = false;
     syntaxHighlighting.enable = true;
 
     initExtra = ''

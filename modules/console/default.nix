@@ -85,6 +85,8 @@
     syntaxHighlighting.enable = true;
 
     initExtra = ''
+      source ${pkgs.zsh-autocomplete}/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+      source ${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
       setopt COMPLETE_IN_WORD
       eval "$(zoxide init zsh)"
       eval "$(atuin init zsh)"

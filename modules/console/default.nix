@@ -85,6 +85,7 @@
     syntaxHighlighting.enable = true;
 
     initExtra = ''
+      setopt COMPLETE_IN_WORD
       eval "$(zoxide init zsh)"
       eval "$(atuin init zsh)"
       '';

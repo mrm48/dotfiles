@@ -75,6 +75,14 @@
   };
 
   programs.zsh = {
+    enable = true;
+    shellAliases = {
+      codetree = "eza -lr --tree";
+    };
+
+    autosuggestion.enable = true;
+    enableCompletion = true;
+    syntaxHighlighting.enable = true;
 
     initExtra = ''
       eval "$(zoxide init zsh)"

@@ -230,7 +230,7 @@
         layer = "top";
         position = "top";
         height = 30;
-        output = [ "DP-1" "HDMI-A-1" ];
+        output = [ "eDP-1" "DP-1" "HDMI-A-1" ];
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
         modules-right = [ "battery" "wireplumber" "tray" ];

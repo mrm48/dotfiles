@@ -283,8 +283,23 @@
           font_color = "rgb(202, 211, 245)";
           inner_color = "rgb(91, 96, 120)";
           outer_color = "rgb(24, 25, 38)";
+          font_family = "Ubuntu";
+          placeholder_text = "Enter password...";
           outline_thickness = 5;
           shadow_passes = 2;
+        }
+      ];
+
+      label = [
+        {
+          monitor = "";
+          text = ''cmd[update:1000] echo "$(date +"%-I:%M%p")"'';
+          color = "$foreground";
+          font_size = 60;
+          font_family = "Ubuntu";
+          position = "0, -300";
+          halign = "center";
+          valign = "top";
         }
       ];
   };

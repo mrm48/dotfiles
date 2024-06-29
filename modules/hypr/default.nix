@@ -55,6 +55,7 @@
         "col.inactive_border" = "rgba(595959aa)";
   
         # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
+        layout = "master";
         allow_tearing = false;
       };
       decoration = {

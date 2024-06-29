@@ -247,11 +247,12 @@
       splash = false;
       splash_offset = 2.0;
 
-      preload = [ "/home/matt/Pictures/walls/wolf.jpg" ];
+      preload = [ "/home/matt/Pictures/walls/nature-art.jpg" ];
 
       wallpaper = [
-        "DP-1,/home/matt/Pictures/walls/wolf.jpg"
-        "HDMI-A-1,/home/matt/Pictures/walls/wolf.jpg"
+        "eDP-1,/home/matt/Pictures/walls/nature-art.jpg"
+        "DP-1,/home/matt/Pictures/walls/nature-art.jpg"
+        "HDMI-A-1,/home/matt/Pictures/walls/nature-art.jpg"
       ];
         
 

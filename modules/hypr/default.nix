@@ -54,8 +54,6 @@
         "col.active_border" = "rgba(ea6962ee) rgba(ea6962ee) 45deg";
         "col.inactive_border" = "rgba(595959aa)";
   
-        layout = "master";
-  
         # Please see https://wiki.hyprland.org/Configuring/Tearing/ before you turn this on
         allow_tearing = false;
       };
@@ -99,7 +97,7 @@
   
       master = {
         # See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
-        new_is_master = true;
+        new_status = "master";
       };
   
       gestures = {

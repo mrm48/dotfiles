@@ -30,6 +30,7 @@
   environment.systemPackages = with pkgs; [
     spice-gtk
     hyprland
+    hyprlock
   ];
 
   programs.hyprland = {

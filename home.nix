@@ -22,7 +22,7 @@
 
       #fonts
       ubuntu_font_family
-      (nerdfonts.override { fonts = [ "UbuntuMono" "FiraMono" "Hack" ]; })
+      (nerdfonts.override { fonts = [ "Ubuntu" "UbuntuMono" "FiraMono" "Hack" ]; })
       cantarell-fonts
 
       #tools

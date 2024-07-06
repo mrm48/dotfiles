@@ -229,7 +229,7 @@
       mainBar = {
         layer = "top";
         position = "top";
-        height = 30;
+        height = 34;
         output = [ "eDP-1" "DP-1" "HDMI-A-1" ];
         modules-left = [ "hyprland/workspaces" ];
         modules-center = [ "clock" ];
@@ -239,8 +239,34 @@
           format = "{:%a %b %d %OI:%M %p}";
           max-length = 25;
         };
+        battery = {
+          format = "{capacity}% {icon}";
+          format-icons = [
+            " "
+            " "
+            "" 
+            " "
+            ""
+          ];
+        };
+        wireplumber = {
+          format = "{volume}% {icon}";
+          format-icons = [
+            "" 
+            ""
+            ""
+          ];
+          format-muted = ""; 
+        };
       };
     };
+
+  programs.waybar.style = ''
+    * {
+        font-family: Ubuntu Nerd Font;
+        padding: 0px 5px;
+    }
+  '';
 
   services.hyprpaper.enable = true;
   services.hyprpaper.settings = {
@@ -285,7 +311,6 @@
           font_color = "rgb(202, 211, 245)";
           inner_color = "rgb(91, 96, 120)";
           outer_color = "rgb(24, 25, 38)";
-          font_family = "Ubuntu";
           placeholder_text = "Enter password...";
           outline_thickness = 5;
           shadow_passes = 2;
@@ -296,7 +321,7 @@
         {
           monitor = "";
           text = ''cmd[update:1000] echo "$(date +"%-I:%M%p")"'';
-          color = "$foreground";
+          color = "rgb(202, 211, 245)";
           font_size = 60;
           font_family = "Ubuntu";
           position = "0, -300";

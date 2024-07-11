@@ -41,6 +41,7 @@
       #code
       python3 # required for gnome extensions
       gcc # required for Treesitter
+      zed-editor
 
       #ui
       papirus-icon-theme

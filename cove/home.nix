@@ -31,6 +31,10 @@
     waybar
     networkmanagerapplet
 
+    #programming
+    jdk21
+    maven
+
   ];
 
 }

@@ -6,6 +6,7 @@
 
     ./modules/console
     ./modules/neovim
+    ./modules/gnome
 
   ]; 
 
@@ -29,14 +30,11 @@
       keepassxc
       gimp
       inkscape
-      kdePackages.plasma-browser-integration
-      kdePackages.kclock
       mpv
       vlc
 
       #social
       freetube
-      kdePackages.kasts
 
       #code
       python3 # required for gnome extensions

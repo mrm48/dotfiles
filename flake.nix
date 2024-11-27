@@ -1,6 +1,6 @@
 {
 
-    description = "Nix configuration as a flake for trinsic and ankh. Using trinsic as day to day and ankh as testing";
+    description = "Nix configuration as a flake for cove, trinsic and ankh. Using trinsic as day to day and ankh as testing";
 
     inputs = {
         nixpkgs.url = "nixpkgs/nixos-unstable";

@@ -14,13 +14,13 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices."luks-fb5bdac2-23b6-4bd8-81bf-009ea830ea0d".device = "/dev/disk/by-uuid/fb5bdac2-23b6-4bd8-81bf-009ea830ea0d";
+  boot.initrd.luks.devices."luks-418a3e08-4da0-4118-8195-46374dfc2eaa".device = "/dev/disk/by-uuid/418a3e08-4da0-4118-8195-46374dfc2eaa";
   boot.kernelPackages = pkgs.linuxPackages_latest;
   networking.hostName = "cove";
 
   # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
   services.flatpak.enable = true;
 
   virtualisation.libvirtd.enable = true;

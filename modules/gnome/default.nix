@@ -5,8 +5,8 @@
   home.packages = with pkgs; [
 
     #gnome extensions
-    gnome.gnome-tweaks
-    gnome.dconf-editor
+    pkgs.gnome-tweaks
+    pkgs.dconf-editor
     chrome-gnome-shell
     gnomeExtensions.appindicator
     gnomeExtensions.blur-my-shell

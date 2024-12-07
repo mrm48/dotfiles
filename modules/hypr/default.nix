@@ -112,7 +112,7 @@
       "$ctrlMod"  = "CTRLSUPER";
   
       bind = [
-        "$mainMod, RETURN, exec, alacritty"
+        "$mainMod, T, exec, alacritty"
         "$mainMod, W, killactive"
         "$shiftMod, M, exit"
         "$mainMod, E, exec, nautilus"
@@ -265,6 +265,11 @@
     * {
         font-family: Ubuntu Nerd Font;
         padding: 0px 5px;
+        color: rgba(255, 255, 255, 1);
+        background-color: rgba(0,0,0,0.5);
+      }
+    #clock {
+      background-color: rgba(0,0,0,0.5);
     }
   '';
 

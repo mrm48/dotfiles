@@ -268,7 +268,7 @@
         color: rgba(255, 255, 255, 1);
         background-color: rgba(0,0,0,0.5);
       }
-    #clock {
+    #battery, #wireplumber, #tray {
       background-color: rgba(0,0,0,0.5);
     }
   '';

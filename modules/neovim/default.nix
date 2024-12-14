@@ -12,7 +12,7 @@
       nvim-lspconfig
       nvim-cmp
       cmp-nvim-lsp
-      nvim-treesitter.withAllGrammars
+      nvim-treesitter.withPlugins (p: [ p.java p.golang ])
       telescope-nvim
       plenary-nvim
       nord-nvim
@@ -52,6 +52,7 @@
         }
 
         require("lspconfig").jdtls.setup {}
+        require("lspconfig").gopls.setup {}
 
         -- Set up nvim-cmp.
         local cmp = require'cmp'

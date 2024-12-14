@@ -60,6 +60,7 @@ require("lazy").setup({
         }
 
         require("lspconfig").jdtls.setup {}
+        require("lspconfig").gopls.setup {}
 
         -- Set up nvim-cmp.
         local cmp = require'cmp'

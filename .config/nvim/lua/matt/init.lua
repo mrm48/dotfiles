@@ -43,3 +43,4 @@ vim.keymap.set("n", "U", "<C-r>")
 
 require("matt.set")
 require("matt.lsp")
+require("matt.themes")

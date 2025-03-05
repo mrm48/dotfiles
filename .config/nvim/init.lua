@@ -16,7 +16,10 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	"ThePrimeagen/harpoon",
+    {   "ThePrimeagen/harpoon",
+        branch = "harpoon2",
+        requires = { {"nvim-lua/plenary.nvim"} }
+    },
 	"nvim-telescope/telescope.nvim",
 	"mfussenegger/nvim-jdtls",
 	"williamboman/mason.nvim",
@@ -126,16 +129,15 @@ require("lazy").setup({
           capabilities = capabilities
         }
 
-        local mark = require("harpoon.mark")
-        local ui = require("harpoon.ui")
+        local harpoon = require("harpoon")
 
-        vim.keymap.set('n', '<leader>a', mark.add_file)
-        vim.keymap.set('n', '<leader>h', function() ui.nav_file(1) end)
-        vim.keymap.set('n', '<leader>j', function() ui.nav_file(2) end)
-        vim.keymap.set('n', '<leader>k', function() ui.nav_file(3) end)
-        vim.keymap.set('n', '<leader>l', function() ui.nav_file(4) end)
+        vim.keymap.set('n', '<leader>a', function() harpoon:list():add() end)
+        vim.keymap.set('n', '<leader>h', function() harpoon:list():select(1) end)
+        vim.keymap.set('n', '<leader>j', function() harpoon:list():select(2) end)
+        vim.keymap.set('n', '<leader>k', function() harpoon:list():select(3) end)
+        vim.keymap.set('n', '<leader>l', function() harpoon:list():select(4) end)
 
-        vim.keymap.set('n', '<leader>n', ui.toggle_quick_menu)
+        vim.keymap.set('n', '<leader>n', function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
 
         -- Default options:
         require('kanagawa').setup({

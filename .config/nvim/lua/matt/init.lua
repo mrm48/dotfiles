@@ -1,4 +1,4 @@
-vim.g.mapleader = " "
+vim.opt.termguicolors = true
 
 -- Open file explorer with space pv                                                                                           
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)                                                                                 

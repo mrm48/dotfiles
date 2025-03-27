@@ -1,10 +1,15 @@
 return {
 	'williamboman/mason.nvim',
-	'williamboman/mason-lspconfig.nvim',
-	config = function()
-        	require("mason").setup()
-        	require("mason-lspconfig").setup {
-          		automatic_installation = true,
-        	}
-	end
+    config = function()
+        require('mason').setup{}
+    	-- Set up lspconfig.
+    	local capabilities = require('cmp_nvim_lsp').default_capabilities()
+    	require('lspconfig')['jdtls'].setup {
+    	  capabilities = capabilities
+    	}
+
+        require('lspconfig')['gopls'].setup {
+            capabilities = capabilities
+        }
+    end
 }

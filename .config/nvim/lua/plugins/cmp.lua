@@ -1,6 +1,5 @@
 return {
 	'hrsh7th/nvim-cmp',
-	'hrsh7th/cmp-nvim-lsp',
 	config = function()
         	-- Set up nvim-cmp.
         	local cmp = require'cmp'
@@ -60,10 +59,5 @@ return {
         	  })
         	})
       
-        	-- Set up lspconfig.
-        	local capabilities = require('cmp_nvim_lsp').default_capabilities()
-        	require('lspconfig')['jdtls'].setup {
-        	  capabilities = capabilities
-        	}
 	end 
 }

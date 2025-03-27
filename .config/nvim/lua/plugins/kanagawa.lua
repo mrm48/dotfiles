@@ -1,7 +1,7 @@
 return {
-    "rebelot/kanagawa.nvim",
+    'rebelot/kanagawa.nvim',
     config = function()
-        require("kanagawa").setup({
+        require('kanagawa').setup({
             compile = false,             -- enable compiling the colorscheme
             undercurl = true,            -- enable undercurls
             commentStyle = { italic = true },
@@ -19,10 +19,10 @@ return {
             overrides = function(colors) -- add/modify highlights
                 return {}
             end,
-            theme = "wave",              -- Load "wave" theme when 'background' option is not set
+            theme = 'wave',              -- Load 'wave' theme when 'background' option is not set
             background = {               -- map the value of 'background' option to a theme
-                dark = "wave",           -- try "dragon" !
-                light = "lotus"
+                dark = 'wave',           -- try 'dragon' !
+                light = 'lotus'
             },
         })
     end 
